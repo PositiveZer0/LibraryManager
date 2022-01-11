@@ -1,10 +1,9 @@
 namespace LibraryManager
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
     using System.Windows.Forms;
+
+    using LibraryManager.Database.Data;
 
     static class Program
     {
@@ -14,6 +13,10 @@ namespace LibraryManager
         [STAThread]
         static void Main()
         {
+            //Ensure that database is created
+            var db = new LibraryManagerContext();
+            db.Database.EnsureCreated();
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
