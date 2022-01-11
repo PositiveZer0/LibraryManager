@@ -5,7 +5,6 @@ namespace LibraryManager
     using System.Windows.Forms;
 
     using LibraryManager.Database.Data;
-    using LibraryManager.Database.Models;
     using LibraryManager.SendGrid;
 
     static class Program
@@ -29,7 +28,7 @@ namespace LibraryManager
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainPage());
+            Application.Run(new Form1());
         }
     }
 }
