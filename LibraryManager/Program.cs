@@ -15,7 +15,7 @@ namespace LibraryManager
         {
             //Ensure that database is created
             var db = new LibraryManagerContext();
-            db.Database.EnsureCreated();
+            db.Database.EnsureDeleted();
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
