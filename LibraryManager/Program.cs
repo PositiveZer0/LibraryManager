@@ -22,9 +22,9 @@ namespace LibraryManager
             //var book = new Book() { Author = "Steven", Name = "MyFirstBook", Year = 1999 };
             //db.Books.Add(book);
             //db.SaveChanges();
-            ////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
-            //var sendGrid = new SendGridEmailSender("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");
+            //var sendGrid = new SendGridEmailSender(ConfigurationConstants.SENDGRIP_APIKEY);
             //await sendGrid.SendEmailAsync("ghostinthewires@abv.bg", "emo", "azsumemi@gmail.com", "test", "First email send");
+            Console.WriteLine(ConfigurationConstants.SERVER_NAME);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
