@@ -22,12 +22,30 @@
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
+        private void username_box_Click(object sender, EventArgs e)
+        {
+            username_box.BackColor = SystemColors.ButtonHighlight;
+            username_wrapper.BackColor = SystemColors.ButtonHighlight;
+            password_box.BackColor = SystemColors.Control;
+            password_wrapper.BackColor = SystemColors.Control;
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+
+        private void password_box_Click(object sender, EventArgs e)
+        {
+            username_box.BackColor = SystemColors.Control;
+            username_wrapper.BackColor = SystemColors.Control;
+            password_box.BackColor = SystemColors.ButtonHighlight;
+            password_wrapper.BackColor = SystemColors.ButtonHighlight;
+        }
+
+        private void password_pic_Click(object sender, EventArgs e)
+        {
+            password_box.UseSystemPasswordChar = !password_box.UseSystemPasswordChar;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
