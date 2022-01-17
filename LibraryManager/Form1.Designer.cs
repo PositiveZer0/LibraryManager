@@ -35,11 +35,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.login_wrapper = new System.Windows.Forms.Panel();
-            this.password_box = new System.Windows.Forms.TextBox();
             this.create_account_btn = new System.Windows.Forms.Button();
             this.forgotten_psw_btn = new System.Windows.Forms.Button();
             this.login_btn = new System.Windows.Forms.Button();
             this.password_wrapper = new System.Windows.Forms.Panel();
+            this.password_box = new System.Windows.Forms.TextBox();
             this.password_pic = new System.Windows.Forms.PictureBox();
             this.username_wrapper = new System.Windows.Forms.Panel();
             this.username_box = new System.Windows.Forms.TextBox();
@@ -125,21 +125,8 @@
             this.login_wrapper.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.login_wrapper.Location = new System.Drawing.Point(541, 0);
             this.login_wrapper.Name = "login_wrapper";
-            this.login_wrapper.Size = new System.Drawing.Size(1059, 1200);
+            this.login_wrapper.Size = new System.Drawing.Size(1060, 1200);
             this.login_wrapper.TabIndex = 1;
-            // 
-            // password_box
-            // 
-            this.password_box.BackColor = System.Drawing.SystemColors.Control;
-            this.password_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password_box.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.password_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
-            this.password_box.Location = new System.Drawing.Point(118, 25);
-            this.password_box.Name = "password_box";
-            this.password_box.Size = new System.Drawing.Size(905, 58);
-            this.password_box.TabIndex = 7;
-            this.password_box.UseSystemPasswordChar = true;
-            this.password_box.Click += new System.EventHandler(this.password_box_Click);
             // 
             // create_account_btn
             // 
@@ -155,7 +142,7 @@
             this.create_account_btn.TabIndex = 7;
             this.create_account_btn.Text = "Create account";
             this.create_account_btn.UseVisualStyleBackColor = false;
-            this.create_account_btn.Click += new System.EventHandler(this.button1_Click);
+            this.create_account_btn.Click += new System.EventHandler(this.create_account_btn_Click);
             // 
             // forgotten_psw_btn
             // 
@@ -194,6 +181,19 @@
             this.password_wrapper.Name = "password_wrapper";
             this.password_wrapper.Size = new System.Drawing.Size(1053, 86);
             this.password_wrapper.TabIndex = 4;
+            // 
+            // password_box
+            // 
+            this.password_box.BackColor = System.Drawing.SystemColors.Control;
+            this.password_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.password_box.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.password_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
+            this.password_box.Location = new System.Drawing.Point(118, 25);
+            this.password_box.Name = "password_box";
+            this.password_box.Size = new System.Drawing.Size(905, 58);
+            this.password_box.TabIndex = 7;
+            this.password_box.UseSystemPasswordChar = true;
+            this.password_box.Click += new System.EventHandler(this.password_box_Click);
             // 
             // password_pic
             // 
@@ -253,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 1200);
+            this.ClientSize = new System.Drawing.Size(1601, 1200);
             this.Controls.Add(this.login_wrapper);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";

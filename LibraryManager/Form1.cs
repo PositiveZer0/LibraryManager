@@ -1,5 +1,6 @@
 ﻿namespace LibraryManager
 {
+    using LibraryManager.Forms;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -45,9 +46,12 @@
             password_box.UseSystemPasswordChar = !password_box.UseSystemPasswordChar;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void create_account_btn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var createAccountForm = new CreateAccount();
+            createAccountForm.Closed += (s, args) => this.Close();
+            createAccountForm.Show();
         }
     }
 }

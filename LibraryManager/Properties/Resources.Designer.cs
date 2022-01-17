@@ -73,6 +73,16 @@ namespace LibraryManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap email {
+            get {
+                object obj = ResourceManager.GetObject("email", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap photo_1568667256549_094345857637 {
             get {
                 object obj = ResourceManager.GetObject("photo-1568667256549-094345857637", resourceCulture);
