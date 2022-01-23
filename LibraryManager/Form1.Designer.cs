@@ -64,7 +64,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(541, 1200);
+            this.panel1.Size = new System.Drawing.Size(541, 1212);
             this.panel1.TabIndex = 0;
             // 
             // label3
@@ -125,7 +125,7 @@
             this.login_wrapper.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.login_wrapper.Location = new System.Drawing.Point(541, 0);
             this.login_wrapper.Name = "login_wrapper";
-            this.login_wrapper.Size = new System.Drawing.Size(1060, 1200);
+            this.login_wrapper.Size = new System.Drawing.Size(1077, 1212);
             this.login_wrapper.TabIndex = 1;
             // 
             // create_account_btn
@@ -158,6 +158,7 @@
             this.forgotten_psw_btn.TabIndex = 6;
             this.forgotten_psw_btn.Text = "Forgotten password";
             this.forgotten_psw_btn.UseVisualStyleBackColor = false;
+            this.forgotten_psw_btn.Click += new System.EventHandler(this.forgotten_psw_btn_Click);
             // 
             // login_btn
             // 
@@ -179,7 +180,7 @@
             this.password_wrapper.Controls.Add(this.password_pic);
             this.password_wrapper.Location = new System.Drawing.Point(4, 570);
             this.password_wrapper.Name = "password_wrapper";
-            this.password_wrapper.Size = new System.Drawing.Size(1053, 86);
+            this.password_wrapper.Size = new System.Drawing.Size(1071, 86);
             this.password_wrapper.TabIndex = 4;
             // 
             // password_box
@@ -190,7 +191,7 @@
             this.password_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
             this.password_box.Location = new System.Drawing.Point(118, 25);
             this.password_box.Name = "password_box";
-            this.password_box.Size = new System.Drawing.Size(905, 58);
+            this.password_box.Size = new System.Drawing.Size(953, 58);
             this.password_box.TabIndex = 7;
             this.password_box.UseSystemPasswordChar = true;
             this.password_box.Click += new System.EventHandler(this.password_box_Click);
@@ -213,7 +214,7 @@
             this.username_wrapper.Controls.Add(this.pictureBox2);
             this.username_wrapper.Location = new System.Drawing.Point(4, 439);
             this.username_wrapper.Name = "username_wrapper";
-            this.username_wrapper.Size = new System.Drawing.Size(1053, 86);
+            this.username_wrapper.Size = new System.Drawing.Size(1071, 86);
             this.username_wrapper.TabIndex = 3;
             // 
             // username_box
@@ -224,7 +225,7 @@
             this.username_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
             this.username_box.Location = new System.Drawing.Point(118, 25);
             this.username_box.Name = "username_box";
-            this.username_box.Size = new System.Drawing.Size(905, 58);
+            this.username_box.Size = new System.Drawing.Size(953, 58);
             this.username_box.TabIndex = 6;
             this.username_box.Click += new System.EventHandler(this.username_box_Click);
             // 
@@ -253,7 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1601, 1200);
+            this.ClientSize = new System.Drawing.Size(1618, 1212);
             this.Controls.Add(this.login_wrapper);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";

@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Database\Models\" />
+    <Folder Include="Forms\Admin\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 

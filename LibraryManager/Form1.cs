@@ -1,6 +1,7 @@
 ﻿namespace LibraryManager
 {
     using LibraryManager.Forms;
+    using LibraryManager.Forms.Client;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -52,6 +53,14 @@
             var createAccountForm = new CreateAccount();
             createAccountForm.Closed += (s, args) => this.Close();
             createAccountForm.Show();
+        }
+
+        private void forgotten_psw_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var mainForm = new Main();
+            mainForm.Closed += (s, args) => this.Close();
+            mainForm.Show();
         }
     }
 }
