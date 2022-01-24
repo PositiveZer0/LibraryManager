@@ -1,17 +1,13 @@
 ﻿namespace LibraryManager.Services
 {
-    using LibraryManager.Database.Data;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Text;
+    using System.Text.RegularExpressions;
+
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
     using LibraryManager.Services.Validation;
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Linq.Expressions;
-    using System.Text;
-    using System.Text.RegularExpressions;
-    using System.Threading.Tasks;
 
     public class CreateAccountService : ICreateAccountService
     {
@@ -29,13 +25,11 @@
                 Name = name,
                 Surname = surname,
                 Email = email,
-                Password = password,
+                Password = SecurePasswordHasher.Hash(password),
                 Role = role,
-                IsEmailVerified = true,
+                IsEmailVerified = verifyEmail,
             };
             await this.user.AddAsync(account);
-            var a = this.user.All().Where(x => x.IsEmailVerified == true).FirstOrDefault();
-            this.user.Delete(a);
             await this.user.SaveChangesAsync();
         }
 
