@@ -1,5 +1,6 @@
 ﻿namespace LibraryManager.Database.Data
 {
+    using LibraryManager.Database.Models;
     using Microsoft.EntityFrameworkCore;
 
     
@@ -14,9 +15,11 @@
     {
     }
 
-    //public virtual DbSet<Book> Books { get; set; }
+    public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public virtual DbSet<ConfirmEmail> ConfirmEmails { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
         {
