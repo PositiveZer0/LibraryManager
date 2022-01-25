@@ -17,22 +17,22 @@
         private SixDigitCodeValidator codeValidator;
         private IDeletableEntityRepository<ConfirmEmail> confirmEmail = new EfDeletableEntityRepository<ConfirmEmail>(new LibraryManagerContext());
         private IDeletableEntityRepository<User> user = new EfDeletableEntityRepository<User>(new LibraryManagerContext());
-        public VerifyEmail()
+        public VerifyEmail(string emailForm)
         {
             InitializeComponent();
             this.codeValidator = new SixDigitCodeValidator(confirmEmail, user);
+            email_box.Text = emailForm;
         }
 
-        protected override void OnLoad(EventArgs e)
+        protected override async void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            email_box.Text = "azsumemi@gmail.com";
 
             var email = email_box.Text;
-            this.codeValidator.Generate(email);
+            await this.codeValidator.GenerateAsync(email);
         }
 
-        private void verify_btn_Click(object sender, EventArgs e)
+        private async void verify_btn_Click(object sender, EventArgs e)
         {
             var email = email_box.Text;
             var codeInput = code_box.Text;
@@ -46,7 +46,7 @@
                 return;
             }
 
-            this.codeValidator.Validate(email);
+            await this.codeValidator.ValidateAsync(email);
 
             this.Hide();
             var form1 = new Form1();
@@ -54,10 +54,10 @@
             form1.Show();
         }
 
-        private void forgotten_psw_btn_Click(object sender, EventArgs e)
+        private async void resendCode_btn_Click(object sender, EventArgs e)
         {
             //todo: add dialog window new code send
-            this.codeValidator.Generate(email_box.Text);
+            await this.codeValidator.GenerateAsync(email_box.Text);
         }
     }
 }

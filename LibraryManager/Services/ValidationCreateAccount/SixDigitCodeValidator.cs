@@ -13,28 +13,30 @@
     {
         private IDeletableEntityRepository<ConfirmEmail> confirmEmail;
         private readonly IDeletableEntityRepository<User> user;
+        Random code;
 
         public SixDigitCodeValidator(IDeletableEntityRepository<ConfirmEmail> confirmEmail,
             IDeletableEntityRepository<User> user)
         {
             this.confirmEmail = confirmEmail;
             this.user = user;
+            code = new Random();
         }
 
-        public async Task Generate(string email)
+        public async Task GenerateAsync(string email)
         {
             var userId = this.user.All().Where(x => x.Email == email).FirstOrDefault().Id;
 
             var confirmation = new ConfirmEmail
             {
-                ConfirmationCode = "123456",
+                ConfirmationCode = this.code.Next(100000, 999999).ToString(),
                 UserId = userId,
             };
 
             await this.confirmEmail.AddAsync(confirmation);
             await this.confirmEmail.SaveChangesAsync();
 
-            SendEmail(email, confirmation.ConfirmationCode);
+            await SendEmailAsync(email, confirmation.ConfirmationCode);
         }
 
         public bool IsValid(string email, string code)
@@ -44,7 +46,7 @@
             return client.ConfirmationCode == code;
         }
 
-        public void Validate(string email)
+        public async Task ValidateAsync(string email)
         {
             var client = this.confirmEmail.All().Select(x => new { 
                 x.UserId,
@@ -54,7 +56,7 @@
 
             var deletedConfirmEmail = GetClient(email);
             this.confirmEmail.Delete(deletedConfirmEmail);
-            this.confirmEmail.SaveChangesAsync();
+            await this.confirmEmail.SaveChangesAsync();
         }
 
         private ConfirmEmail GetClient(string email)
@@ -62,12 +64,12 @@
             return this.confirmEmail.All().Where(x => x.User.Email == email).FirstOrDefault();
         }
 
-        private  void SendEmail(string email, string code)
+        private async Task SendEmailAsync(string email, string code)
         {
             var sendGrid = new SendGridEmailSender(ConfigurationConstants.SENDGRID_APIKEY);
             //sender, sender name, receiver
             //todo: add email
-            sendGrid.SendEmailAsync("azsumemi@gmail.com", "Library Manager", "ghostinthewires@abv.bg", "Code verification", code);
+            await sendGrid.SendEmailAsync("azsumemi@gmail.com", "Library Manager", email, "Code verification", code);
         }
 
     }

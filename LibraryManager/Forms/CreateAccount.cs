@@ -33,7 +33,7 @@
             confirm_psw_box.UseSystemPasswordChar = !confirm_psw_box.UseSystemPasswordChar;
         }
 
-        private void create_acc_btn_Click(object sender, EventArgs e)
+        private async void create_acc_btn_Click(object sender, EventArgs e)
         {
             errors_textbox.Text = string.Empty;
 
@@ -54,18 +54,11 @@
                 errors_textbox.Text = errors;
                 return;
             }
-            this.createAccountService.CreateAccount(name, surname, email, password, role, isEmailVerified);
+            await this.createAccountService.CreateAccount(name, surname, email, password, role, isEmailVerified);
 
-            //using (VerifyEmail verifyEmailForm = new VerifyEmail())
-            //{
-            //    if (verifyEmailForm.ShowDialog() == DialogResult.OK)
-            //    {
-            //        email_box.Text = verifyEmailForm.TheValue;
-            //    }
-            //}
 
             this.Hide();
-            var verifyEmailForm = new VerifyEmail();
+            var verifyEmailForm = new VerifyEmail(email_box.Text);
             verifyEmailForm.Closed += (s, args) => this.Close();
             verifyEmailForm.Show();
         }

@@ -44,7 +44,7 @@
             this.code_box = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.verify_btn = new System.Windows.Forms.Button();
-            this.forgotten_psw_btn = new System.Windows.Forms.Button();
+            this.resendCode_btn = new System.Windows.Forms.Button();
             this.wrongCode_textbox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -220,21 +220,21 @@
             this.verify_btn.UseVisualStyleBackColor = false;
             this.verify_btn.Click += new System.EventHandler(this.verify_btn_Click);
             // 
-            // forgotten_psw_btn
+            // resendCode_btn
             // 
-            this.forgotten_psw_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.forgotten_psw_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.forgotten_psw_btn.FlatAppearance.BorderSize = 0;
-            this.forgotten_psw_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.forgotten_psw_btn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.forgotten_psw_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
-            this.forgotten_psw_btn.Location = new System.Drawing.Point(1143, 900);
-            this.forgotten_psw_btn.Name = "forgotten_psw_btn";
-            this.forgotten_psw_btn.Size = new System.Drawing.Size(319, 119);
-            this.forgotten_psw_btn.TabIndex = 17;
-            this.forgotten_psw_btn.Text = "Resend code";
-            this.forgotten_psw_btn.UseVisualStyleBackColor = false;
-            this.forgotten_psw_btn.Click += new System.EventHandler(this.forgotten_psw_btn_Click);
+            this.resendCode_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.resendCode_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.resendCode_btn.FlatAppearance.BorderSize = 0;
+            this.resendCode_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resendCode_btn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.resendCode_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
+            this.resendCode_btn.Location = new System.Drawing.Point(1143, 900);
+            this.resendCode_btn.Name = "resendCode_btn";
+            this.resendCode_btn.Size = new System.Drawing.Size(319, 119);
+            this.resendCode_btn.TabIndex = 17;
+            this.resendCode_btn.Text = "Resend code";
+            this.resendCode_btn.UseVisualStyleBackColor = false;
+            this.resendCode_btn.Click += new System.EventHandler(this.resendCode_btn_Click);
             // 
             // wrongCode_textbox
             // 
@@ -245,7 +245,6 @@
             this.wrongCode_textbox.Multiline = true;
             this.wrongCode_textbox.Name = "wrongCode_textbox";
             this.wrongCode_textbox.ReadOnly = true;
-            this.wrongCode_textbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.wrongCode_textbox.Size = new System.Drawing.Size(1076, 81);
             this.wrongCode_textbox.TabIndex = 18;
             this.wrongCode_textbox.Visible = false;
@@ -256,7 +255,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1618, 1212);
             this.Controls.Add(this.wrongCode_textbox);
-            this.Controls.Add(this.forgotten_psw_btn);
+            this.Controls.Add(this.resendCode_btn);
             this.Controls.Add(this.verify_btn);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.verificationCode_label);
@@ -297,7 +296,7 @@
         private System.Windows.Forms.TextBox code_box;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button verify_btn;
-        private System.Windows.Forms.Button forgotten_psw_btn;
+        private System.Windows.Forms.Button resendCode_btn;
         private System.Windows.Forms.TextBox wrongCode_textbox;
     }
 }
