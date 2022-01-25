@@ -39,6 +39,14 @@
             await SendEmailAsync(email, confirmation.ConfirmationCode);
         }
 
+        public async Task ResendCode(string email)
+        {
+            var deletedConfirmEmail = GetClient(email);
+            this.confirmEmail.Delete(deletedConfirmEmail);
+
+            await GenerateAsync(email);
+        }
+
         public bool IsValid(string email, string code)
         {
             var client = GetClient(email);

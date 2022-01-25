@@ -35,7 +35,7 @@
         private async void verify_btn_Click(object sender, EventArgs e)
         {
             var email = email_box.Text;
-            var codeInput = code_box.Text;
+            var codeInput = code_box.Text.TrimEnd();
 
             if (!this.codeValidator.IsValid(email, codeInput))
             {
@@ -57,7 +57,7 @@
         private async void resendCode_btn_Click(object sender, EventArgs e)
         {
             //todo: add dialog window new code send
-            await this.codeValidator.GenerateAsync(email_box.Text);
+            await this.codeValidator.ResendCode(email_box.Text);
         }
     }
 }

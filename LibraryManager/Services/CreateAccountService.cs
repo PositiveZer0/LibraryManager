@@ -47,7 +47,7 @@
             result.AppendLine(surnameValidator.Validate());
 
             //email validation
-            var emailValidator = new EmailValidator(email);
+            var emailValidator = new EmailValidator(this.user, email);
             result.AppendLine(emailValidator.Validate());
 
             //password validation
