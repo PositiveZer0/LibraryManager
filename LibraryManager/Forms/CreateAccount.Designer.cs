@@ -319,7 +319,7 @@
             this.create_acc_btn.FlatAppearance.BorderSize = 0;
             this.create_acc_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.create_acc_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.create_acc_btn.Location = new System.Drawing.Point(376, 1067);
+            this.create_acc_btn.Location = new System.Drawing.Point(378, 1063);
             this.create_acc_btn.Name = "create_acc_btn";
             this.create_acc_btn.Size = new System.Drawing.Size(319, 119);
             this.create_acc_btn.TabIndex = 5;

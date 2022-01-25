@@ -130,9 +130,6 @@
   <data name="2838601" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2838601.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="verification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\verification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="verificationEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\verificationEmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -18,6 +18,11 @@
             this.createAccountService = new CreateAccountService(this.user);
         }
 
+        public string TheValue
+        {
+            get { return email_box.Text; }
+        }
+
         private void password_pic_Click(object sender, EventArgs e)
         {
             password_box.UseSystemPasswordChar = !password_box.UseSystemPasswordChar;
@@ -50,6 +55,19 @@
                 return;
             }
             this.createAccountService.CreateAccount(name, surname, email, password, role, isEmailVerified);
+
+            //using (VerifyEmail verifyEmailForm = new VerifyEmail())
+            //{
+            //    if (verifyEmailForm.ShowDialog() == DialogResult.OK)
+            //    {
+            //        email_box.Text = verifyEmailForm.TheValue;
+            //    }
+            //}
+
+            this.Hide();
+            var verifyEmailForm = new VerifyEmail();
+            verifyEmailForm.Closed += (s, args) => this.Close();
+            verifyEmailForm.Show();
         }
         
     }
