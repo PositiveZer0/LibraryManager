@@ -1,7 +1,11 @@
 ﻿namespace LibraryManager
 {
+    using LibraryManager.Database.Data;
+    using LibraryManager.Database.Models;
+    using LibraryManager.Database.Repositories;
     using LibraryManager.Forms;
     using LibraryManager.Forms.Client;
+    using LibraryManager.Services;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -14,9 +18,14 @@
 
     public partial class Form1 : Form
     {
+        ILoginService loginService;
+        Timer timer = new Timer();
+        IDeletableEntityRepository<User> user = new EfDeletableEntityRepository<User>(new LibraryManagerContext());
+
         public Form1()
         {
             InitializeComponent();
+            loginService = new LoginService(this.user);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -61,6 +70,47 @@
             var mainForm = new Main();
             mainForm.Closed += (s, args) => this.Close();
             mainForm.Show();
+        }
+
+        private void login_btn_Click(object sender, EventArgs e)
+        {
+            var username = username_box.Text;
+            var password = password_box.Text;
+
+            var loginMessage = this.loginService.Login(username, password);
+            if (loginMessage != string.Empty)
+            {
+                SetTimer(5000);
+                ShowTextBox(loginMessage);
+                return;
+            }
+
+            this.Hide();
+            var mainForm = new Main();
+            mainForm.Closed += (s, args) => this.Close();
+            mainForm.Show();
+        }
+
+        private void SetTimer(int miliseconds)
+        {
+            timer.Stop();
+            timer.Interval = (miliseconds);
+            timer.Tick += new EventHandler(ClearTextBox);
+            timer.Start();
+        }
+
+        private void ShowTextBox(string message)
+        {
+            error_textbox.Visible = true;
+            error_textbox.ForeColor = System.Drawing.Color.Red;
+            error_textbox.BackColor = System.Drawing.Color.White;
+            error_textbox.Text = message;
+        }
+
+        private void ClearTextBox(object sender, EventArgs e)
+        {
+            error_textbox.Text = String.Empty;
+            error_textbox.Visible = false;
         }
     }
 }

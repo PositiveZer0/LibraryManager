@@ -45,6 +45,7 @@
             this.username_box = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.login_label = new System.Windows.Forms.Label();
+            this.error_textbox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.login_wrapper.SuspendLayout();
@@ -115,6 +116,7 @@
             // 
             this.login_wrapper.BackColor = System.Drawing.SystemColors.Control;
             this.login_wrapper.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.login_wrapper.Controls.Add(this.error_textbox);
             this.login_wrapper.Controls.Add(this.create_account_btn);
             this.login_wrapper.Controls.Add(this.forgotten_psw_btn);
             this.login_wrapper.Controls.Add(this.login_btn);
@@ -152,7 +154,7 @@
             this.forgotten_psw_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.forgotten_psw_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.forgotten_psw_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
-            this.forgotten_psw_btn.Location = new System.Drawing.Point(544, 736);
+            this.forgotten_psw_btn.Location = new System.Drawing.Point(565, 809);
             this.forgotten_psw_btn.Name = "forgotten_psw_btn";
             this.forgotten_psw_btn.Size = new System.Drawing.Size(306, 100);
             this.forgotten_psw_btn.TabIndex = 6;
@@ -166,12 +168,13 @@
             this.login_btn.FlatAppearance.BorderSize = 0;
             this.login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.login_btn.Location = new System.Drawing.Point(183, 736);
+            this.login_btn.Location = new System.Drawing.Point(178, 809);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(306, 100);
             this.login_btn.TabIndex = 5;
             this.login_btn.Text = "Login";
             this.login_btn.UseVisualStyleBackColor = false;
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
             // password_wrapper
             // 
@@ -250,6 +253,20 @@
             this.login_label.TabIndex = 2;
             this.login_label.Text = "Login to your account";
             // 
+            // error_textbox
+            // 
+            this.error_textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.error_textbox.Font = new System.Drawing.Font("Century Gothic", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.error_textbox.ForeColor = System.Drawing.Color.Red;
+            this.error_textbox.Location = new System.Drawing.Point(4, 692);
+            this.error_textbox.Multiline = true;
+            this.error_textbox.Name = "error_textbox";
+            this.error_textbox.ReadOnly = true;
+            this.error_textbox.Size = new System.Drawing.Size(1076, 63);
+            this.error_textbox.TabIndex = 19;
+            this.error_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.error_textbox.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
@@ -293,6 +310,7 @@
         private System.Windows.Forms.Button forgotten_psw_btn;
         private System.Windows.Forms.Button login_btn;
         private System.Windows.Forms.Button create_account_btn;
+        private System.Windows.Forms.TextBox error_textbox;
     }
 }
 
