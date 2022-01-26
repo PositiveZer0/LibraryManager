@@ -239,14 +239,15 @@
             // wrongCode_textbox
             // 
             this.wrongCode_textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.wrongCode_textbox.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.wrongCode_textbox.Font = new System.Drawing.Font("Century Gothic", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.wrongCode_textbox.ForeColor = System.Drawing.Color.Red;
             this.wrongCode_textbox.Location = new System.Drawing.Point(541, 795);
             this.wrongCode_textbox.Multiline = true;
             this.wrongCode_textbox.Name = "wrongCode_textbox";
             this.wrongCode_textbox.ReadOnly = true;
-            this.wrongCode_textbox.Size = new System.Drawing.Size(1076, 81);
+            this.wrongCode_textbox.Size = new System.Drawing.Size(1076, 63);
             this.wrongCode_textbox.TabIndex = 18;
+            this.wrongCode_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.wrongCode_textbox.Visible = false;
             // 
             // VerifyEmail

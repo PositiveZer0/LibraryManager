@@ -17,7 +17,7 @@ namespace LibraryManager
         {
             ////Ensure that database is created
             var db = new LibraryManagerContext();
-            db.Database.EnsureDeleted();
+            //db.Database.EnsureDeleted();
             db.Database.EnsureCreated();
             //var book = new Book() { Author = "Steven", Name = "MyFirstBook", Year = 1999 };
             //db.Books.Add(book);
