@@ -1,9 +1,7 @@
-﻿namespace LibraryManager.Services
+﻿namespace LibraryManager.Services.Login.ValidationCreateAccount
 {
     using System;
-    using System.Collections.Generic;
     using System.Security.Cryptography;
-    using System.Text;
 
     public static class SecurePasswordHasher
     {

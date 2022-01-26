@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.login_wrapper = new System.Windows.Forms.Panel();
+            this.error_textbox = new System.Windows.Forms.TextBox();
             this.create_account_btn = new System.Windows.Forms.Button();
             this.forgotten_psw_btn = new System.Windows.Forms.Button();
             this.login_btn = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.username_box = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.login_label = new System.Windows.Forms.Label();
-            this.error_textbox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.login_wrapper.SuspendLayout();
@@ -129,6 +129,20 @@
             this.login_wrapper.Name = "login_wrapper";
             this.login_wrapper.Size = new System.Drawing.Size(1077, 1212);
             this.login_wrapper.TabIndex = 1;
+            // 
+            // error_textbox
+            // 
+            this.error_textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.error_textbox.Font = new System.Drawing.Font("Century Gothic", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.error_textbox.ForeColor = System.Drawing.Color.Red;
+            this.error_textbox.Location = new System.Drawing.Point(4, 692);
+            this.error_textbox.Multiline = true;
+            this.error_textbox.Name = "error_textbox";
+            this.error_textbox.ReadOnly = true;
+            this.error_textbox.Size = new System.Drawing.Size(1076, 63);
+            this.error_textbox.TabIndex = 19;
+            this.error_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.error_textbox.Visible = false;
             // 
             // create_account_btn
             // 
@@ -252,20 +266,6 @@
             this.login_label.Size = new System.Drawing.Size(675, 74);
             this.login_label.TabIndex = 2;
             this.login_label.Text = "Login to your account";
-            // 
-            // error_textbox
-            // 
-            this.error_textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.error_textbox.Font = new System.Drawing.Font("Century Gothic", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.error_textbox.ForeColor = System.Drawing.Color.Red;
-            this.error_textbox.Location = new System.Drawing.Point(4, 692);
-            this.error_textbox.Multiline = true;
-            this.error_textbox.Name = "error_textbox";
-            this.error_textbox.ReadOnly = true;
-            this.error_textbox.Size = new System.Drawing.Size(1076, 63);
-            this.error_textbox.TabIndex = 19;
-            this.error_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.error_textbox.Visible = false;
             // 
             // Form1
             // 

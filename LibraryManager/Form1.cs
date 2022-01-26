@@ -1,11 +1,5 @@
 ﻿namespace LibraryManager
 {
-    using LibraryManager.Database.Data;
-    using LibraryManager.Database.Models;
-    using LibraryManager.Database.Repositories;
-    using LibraryManager.Forms;
-    using LibraryManager.Forms.Client;
-    using LibraryManager.Services;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -16,16 +10,30 @@
     using System.Threading.Tasks;
     using System.Windows.Forms;
 
+    using LibraryManager.Forms;
+    using LibraryManager.Forms.Client;
+    using LibraryManager.Services.Common;
+    using LibraryManager.Services.Login;
+    using LibraryManager.Database.Data;
+    using LibraryManager.Database.Models;
+    using LibraryManager.Database.Repositories;
+
     public partial class Form1 : Form
     {
+        Timer timer;
         ILoginService loginService;
-        Timer timer = new Timer();
-        IDeletableEntityRepository<User> user = new EfDeletableEntityRepository<User>(new LibraryManagerContext());
+        IChangeFormService changeFormService;
+        IShowErrorService showErrorService;
+        IDeletableEntityRepository<User> user;
 
         public Form1()
         {
             InitializeComponent();
-            loginService = new LoginService(this.user);
+            this.timer = new Timer();
+            this.changeFormService = new ChangeFormService();
+            this.user = new EfDeletableEntityRepository<User>(new LibraryManagerContext());
+            this.loginService = new LoginService(this.user);
+            this.showErrorService = new ShowErrorService(error_textbox, this.timer);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,18 +66,13 @@
 
         private void create_account_btn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var createAccountForm = new CreateAccount();
-            createAccountForm.Closed += (s, args) => this.Close();
-            createAccountForm.Show();
+            this.changeFormService.Change(this, new CreateAccount());
         }
 
         private void forgotten_psw_btn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var mainForm = new Main();
-            mainForm.Closed += (s, args) => this.Close();
-            mainForm.Show();
+            //todo:
+            this.changeFormService.Change(this, new Main());
         }
 
         private void login_btn_Click(object sender, EventArgs e)
@@ -80,37 +83,12 @@
             var loginMessage = this.loginService.Login(username, password);
             if (loginMessage != string.Empty)
             {
-                SetTimer(5000);
-                ShowTextBox(loginMessage);
+                this.showErrorService.Show(5000, loginMessage);
                 return;
             }
 
-            this.Hide();
-            var mainForm = new Main();
-            mainForm.Closed += (s, args) => this.Close();
-            mainForm.Show();
+            this.changeFormService.Change(this, new Main());
         }
 
-        private void SetTimer(int miliseconds)
-        {
-            timer.Stop();
-            timer.Interval = (miliseconds);
-            timer.Tick += new EventHandler(ClearTextBox);
-            timer.Start();
-        }
-
-        private void ShowTextBox(string message)
-        {
-            error_textbox.Visible = true;
-            error_textbox.ForeColor = System.Drawing.Color.Red;
-            error_textbox.BackColor = System.Drawing.Color.White;
-            error_textbox.Text = message;
-        }
-
-        private void ClearTextBox(object sender, EventArgs e)
-        {
-            error_textbox.Text = String.Empty;
-            error_textbox.Visible = false;
-        }
     }
 }

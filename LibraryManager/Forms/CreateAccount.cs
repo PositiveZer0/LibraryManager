@@ -2,19 +2,24 @@
 {
     using System;
     using System.Windows.Forms;
+
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
-    using LibraryManager.Services;
+    using LibraryManager.Services.Login;
+    using LibraryManager.Services.Common;
 
     public partial class CreateAccount : Form
     {
+        private IChangeFormService changeFormService;
         private ICreateAccountService createAccountService;
-        private IDeletableEntityRepository<User> user = new EfDeletableEntityRepository<User>(new LibraryManagerContext());
+        private IDeletableEntityRepository<User> user; 
 
         public CreateAccount()
         {
             InitializeComponent();
+            this.changeFormService = new ChangeFormService();
+            this.user = new EfDeletableEntityRepository<User>(new LibraryManagerContext());
             this.createAccountService = new CreateAccountService(this.user);
         }
 
@@ -54,14 +59,10 @@
                 errors_textbox.Text = errors;
                 return;
             }
+
             await this.createAccountService.CreateAccount(name, surname, email, password, role, isEmailVerified);
-
-
-            this.Hide();
-            var verifyEmailForm = new VerifyEmail(email_box.Text);
-            verifyEmailForm.Closed += (s, args) => this.Close();
-            verifyEmailForm.Show();
+            this.changeFormService.Change(this, new VerifyEmail(email_box.Text));
         }
-        
+
     }
 }

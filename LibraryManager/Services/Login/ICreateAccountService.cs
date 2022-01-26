@@ -1,8 +1,5 @@
-﻿namespace LibraryManager.Services
+﻿namespace LibraryManager.Services.Login
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
     using System.Threading.Tasks;
 
     public interface ICreateAccountService

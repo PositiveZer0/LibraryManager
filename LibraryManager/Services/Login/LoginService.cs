@@ -1,11 +1,10 @@
-﻿namespace LibraryManager.Services
+﻿namespace LibraryManager.Services.Login
 {
+    using System.Linq;
+
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
+    using LibraryManager.Services.Login.ValidationCreateAccount;
 
     public class LoginService : ILoginService
     {
