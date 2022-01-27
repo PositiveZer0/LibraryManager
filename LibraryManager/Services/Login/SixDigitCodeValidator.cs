@@ -1,4 +1,4 @@
-﻿namespace LibraryManager.Services.Login.ValidationCreateAccount
+﻿namespace LibraryManager.Services.Login
 {
     using System;
     using System.Linq;
