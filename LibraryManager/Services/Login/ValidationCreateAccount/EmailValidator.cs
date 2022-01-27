@@ -10,32 +10,41 @@
     public class EmailValidator
     {
         private readonly IDeletableEntityRepository<User> user;
-        private string email;
         private StringBuilder result;
 
-        public EmailValidator(IDeletableEntityRepository<User> user, string email)
+        public EmailValidator(IDeletableEntityRepository<User> user)
         {
             this.user = user;
-            this.email = email;
             this.result = new StringBuilder();
         }
 
-        public string Validate()
+        public string Validate(string email)
         {
-            result.AppendLine(EmailShouldBeValid());
-            result.AppendLine(EmailShouldBeFree());
+            result.AppendLine(EmailShouldBeValid(email));
+            result.AppendLine(EmailShouldBeFree(email));
 
             return result.ToString();
         }
 
-        private string EmailShouldBeValid()
+        public string EmailShouldExistInDb(string email)
+        {
+            var account = this.user.All().Where(x => x.Email == email).FirstOrDefault();
+            if (account == null)
+            {
+                return "Email doesn't exist";
+            }
+
+            return string.Empty;
+        }
+
+        private string EmailShouldBeValid(string email)
         {
             var validator = new EmailAddressAttribute();
 
-            return validator.IsValid(this.email) ? null : "Email should be valid";
+            return validator.IsValid(email) ? null : "Email should be valid";
         }
 
-        private string EmailShouldBeFree()
+        private string EmailShouldBeFree(string email)
         {
             var isFree = (this.user.All().FirstOrDefault(x => x.Email == email)) == null;
             return isFree ? null : "Email already used";

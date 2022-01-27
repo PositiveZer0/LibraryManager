@@ -13,6 +13,9 @@
     <Compile Update="Forms\CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\ForgottenPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\VerifyEmail.cs">
       <SubType>Form</SubType>
     </Compile>

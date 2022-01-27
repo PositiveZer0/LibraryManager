@@ -40,11 +40,11 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.newPassword_label = new System.Windows.Forms.Label();
             this.password_wrapper = new System.Windows.Forms.Panel();
-            this.password_box = new System.Windows.Forms.TextBox();
+            this.newPassword_box = new System.Windows.Forms.TextBox();
             this.password_pic = new System.Windows.Forms.PictureBox();
             this.confirmNewPsw_label = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.confirm_psw_box = new System.Windows.Forms.TextBox();
+            this.confirmNewPsw_box = new System.Windows.Forms.TextBox();
             this.confirm_psw_pic = new System.Windows.Forms.PictureBox();
             this.changePassword_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -180,24 +180,24 @@
             // password_wrapper
             // 
             this.password_wrapper.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.password_wrapper.Controls.Add(this.password_box);
+            this.password_wrapper.Controls.Add(this.newPassword_box);
             this.password_wrapper.Controls.Add(this.password_pic);
             this.password_wrapper.Location = new System.Drawing.Point(544, 601);
             this.password_wrapper.Name = "password_wrapper";
             this.password_wrapper.Size = new System.Drawing.Size(1070, 86);
             this.password_wrapper.TabIndex = 16;
             // 
-            // password_box
+            // newPassword_box
             // 
-            this.password_box.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.password_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password_box.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.password_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
-            this.password_box.Location = new System.Drawing.Point(119, 25);
-            this.password_box.Name = "password_box";
-            this.password_box.Size = new System.Drawing.Size(948, 58);
-            this.password_box.TabIndex = 7;
-            this.password_box.UseSystemPasswordChar = true;
+            this.newPassword_box.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.newPassword_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.newPassword_box.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.newPassword_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
+            this.newPassword_box.Location = new System.Drawing.Point(119, 25);
+            this.newPassword_box.Name = "newPassword_box";
+            this.newPassword_box.Size = new System.Drawing.Size(948, 58);
+            this.newPassword_box.TabIndex = 7;
+            this.newPassword_box.UseSystemPasswordChar = true;
             // 
             // password_pic
             // 
@@ -224,24 +224,24 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel4.Controls.Add(this.confirm_psw_box);
+            this.panel4.Controls.Add(this.confirmNewPsw_box);
             this.panel4.Controls.Add(this.confirm_psw_pic);
             this.panel4.Location = new System.Drawing.Point(547, 776);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1073, 86);
             this.panel4.TabIndex = 18;
             // 
-            // confirm_psw_box
+            // confirmNewPsw_box
             // 
-            this.confirm_psw_box.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.confirm_psw_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.confirm_psw_box.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.confirm_psw_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
-            this.confirm_psw_box.Location = new System.Drawing.Point(119, 25);
-            this.confirm_psw_box.Name = "confirm_psw_box";
-            this.confirm_psw_box.Size = new System.Drawing.Size(946, 58);
-            this.confirm_psw_box.TabIndex = 7;
-            this.confirm_psw_box.UseSystemPasswordChar = true;
+            this.confirmNewPsw_box.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.confirmNewPsw_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.confirmNewPsw_box.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.confirmNewPsw_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
+            this.confirmNewPsw_box.Location = new System.Drawing.Point(119, 25);
+            this.confirmNewPsw_box.Name = "confirmNewPsw_box";
+            this.confirmNewPsw_box.Size = new System.Drawing.Size(946, 58);
+            this.confirmNewPsw_box.TabIndex = 7;
+            this.confirmNewPsw_box.UseSystemPasswordChar = true;
             // 
             // confirm_psw_pic
             // 
@@ -420,11 +420,11 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label newPassword_label;
         private System.Windows.Forms.Panel password_wrapper;
-        private System.Windows.Forms.TextBox password_box;
+        private System.Windows.Forms.TextBox newPassword_box;
         private System.Windows.Forms.PictureBox password_pic;
         private System.Windows.Forms.Label confirmNewPsw_label;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox confirm_psw_box;
+        private System.Windows.Forms.TextBox confirmNewPsw_box;
         private System.Windows.Forms.PictureBox confirm_psw_pic;
         private System.Windows.Forms.Button changePassword_btn;
         private System.Windows.Forms.Panel panel2;
