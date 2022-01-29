@@ -21,6 +21,7 @@
         IShowErrorService showErrorService;
         ISixDigitCodeValidator codeValidator;
         IChangePasswordService changePassword;
+        IChangeFormService changeFormService;
         private IDeletableEntityRepository<User> user;
         private IDeletableEntityRepository<ConfirmEmail> confirmEmail;
 
@@ -34,13 +35,14 @@
             this.changePassword = new ChangePasswordService(this.user);
             this.emailValidator = new EmailValidator(this.user);
             this.codeValidator = new SixDigitCodeValidator(this.confirmEmail, this.user);
+            this.changeFormService = new ChangeFormService();
         }
 
         private async void sendCode_btn_Click(object sender, EventArgs e)
         {
             var email = email_box.Text;
             var isEmailValid = this.emailValidator.EmailShouldExistInDb(email);
-            if (isEmailValid != null)
+            if (isEmailValid != string.Empty)
             {
                 this.showErrorService.Show(5000, isEmailValid);
                 return;
@@ -50,15 +52,6 @@
             await this.codeValidator.GenerateAsync(email);
         }
 
-        private void password_pic_Click(object sender, EventArgs e)
-        {
-            newPassword_box.UseSystemPasswordChar = !newPassword_box.UseSystemPasswordChar;
-        }
-
-        private void confirm_psw_pic_Click(object sender, EventArgs e)
-        {
-            newPassword_box.UseSystemPasswordChar = !newPassword_box.UseSystemPasswordChar;
-        }
 
         private async void resendCode_btn_Click(object sender, EventArgs e)
         {
@@ -91,7 +84,18 @@
             }
 
             this.changePassword.Change(email, password);
+            //todo: add beautiful msg box
+            MessageBox.Show("Password changed successfully", "Password change");
+            this.changeFormService.Change(this, new Form1());
+        }
+        private void password_pic_Click(object sender, EventArgs e)
+        {
+            newPassword_box.UseSystemPasswordChar = !newPassword_box.UseSystemPasswordChar;
+        }
 
+        private void confirm_psw_pic_Click(object sender, EventArgs e)
+        {
+            newPassword_box.UseSystemPasswordChar = !newPassword_box.UseSystemPasswordChar;
         }
     }
 }

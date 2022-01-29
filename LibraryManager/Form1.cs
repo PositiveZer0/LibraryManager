@@ -71,8 +71,7 @@
 
         private void forgotten_psw_btn_Click(object sender, EventArgs e)
         {
-            //todo:
-            this.changeFormService.Change(this, new Main());
+            this.changeFormService.Change(this, new ForgottenPassword());
         }
 
         private void login_btn_Click(object sender, EventArgs e)

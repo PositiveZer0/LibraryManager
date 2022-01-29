@@ -57,6 +57,8 @@
             }
 
             await this.codeValidator.ValidateAsync(this.email);
+            //todo: make beautiful ui message box
+            MessageBox.Show("Account created successfully", "Account");
             this.changeFormService.Change(this, new Form1());
         }
 
