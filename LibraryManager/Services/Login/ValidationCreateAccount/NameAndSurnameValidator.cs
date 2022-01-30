@@ -19,6 +19,11 @@
         public string Validate()
         {
             result.AppendLine(InputShouldBeBetweenTwoAndThirtyCharacters());
+            if (result.Length != 0)
+            {
+                return result.ToString();
+            }
+
             result.AppendLine(InputShouldContainOnlyLetters());
             result.AppendLine(InputShouldStartWithUpperLetter());
 

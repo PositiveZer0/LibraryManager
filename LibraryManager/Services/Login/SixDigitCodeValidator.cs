@@ -50,6 +50,11 @@
         {
             var client = GetClient(email);
 
+            if (client == null)
+            {
+                return false;
+            }
+
             return client.ConfirmationCode == code;
         }
 
