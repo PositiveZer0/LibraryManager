@@ -46,12 +46,14 @@
             this.verify_btn = new System.Windows.Forms.Button();
             this.resendCode_btn = new System.Windows.Forms.Button();
             this.wrongCode_textbox = new System.Windows.Forms.TextBox();
+            this.back_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -250,11 +252,23 @@
             this.wrongCode_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.wrongCode_textbox.Visible = false;
             // 
+            // back_pictureBox
+            // 
+            this.back_pictureBox.Image = global::LibraryManager.Properties.Resources.back;
+            this.back_pictureBox.Location = new System.Drawing.Point(541, 0);
+            this.back_pictureBox.Name = "back_pictureBox";
+            this.back_pictureBox.Size = new System.Drawing.Size(118, 67);
+            this.back_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.back_pictureBox.TabIndex = 20;
+            this.back_pictureBox.TabStop = false;
+            this.back_pictureBox.Click += new System.EventHandler(this.back_pictureBox_Click);
+            // 
             // VerifyEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1618, 1212);
+            this.Controls.Add(this.back_pictureBox);
             this.Controls.Add(this.wrongCode_textbox);
             this.Controls.Add(this.resendCode_btn);
             this.Controls.Add(this.verify_btn);
@@ -275,6 +289,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +314,6 @@
         private System.Windows.Forms.Button verify_btn;
         private System.Windows.Forms.Button resendCode_btn;
         private System.Windows.Forms.TextBox wrongCode_textbox;
+        private System.Windows.Forms.PictureBox back_pictureBox;
     }
 }

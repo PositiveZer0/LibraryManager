@@ -58,6 +58,7 @@
             this.name_box = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.create_acc_label = new System.Windows.Forms.Label();
+            this.back_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.login_wrapper.SuspendLayout();
@@ -71,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.password_pic)).BeginInit();
             this.username_wrapper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -134,6 +136,7 @@
             // 
             this.login_wrapper.BackColor = System.Drawing.SystemColors.Control;
             this.login_wrapper.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.login_wrapper.Controls.Add(this.back_pictureBox);
             this.login_wrapper.Controls.Add(this.errors_textbox);
             this.login_wrapper.Controls.Add(this.confirm_psw_label);
             this.login_wrapper.Controls.Add(this.panel4);
@@ -402,6 +405,17 @@
             this.create_acc_label.TabIndex = 2;
             this.create_acc_label.Text = "Create Account";
             // 
+            // back_pictureBox
+            // 
+            this.back_pictureBox.Image = global::LibraryManager.Properties.Resources.back;
+            this.back_pictureBox.Location = new System.Drawing.Point(-2, -2);
+            this.back_pictureBox.Name = "back_pictureBox";
+            this.back_pictureBox.Size = new System.Drawing.Size(118, 67);
+            this.back_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.back_pictureBox.TabIndex = 27;
+            this.back_pictureBox.TabStop = false;
+            this.back_pictureBox.Click += new System.EventHandler(this.back_pictureBox_Click);
+            // 
             // CreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
@@ -431,6 +445,7 @@
             this.username_wrapper.ResumeLayout(false);
             this.username_wrapper.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back_pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -466,5 +481,6 @@
         private System.Windows.Forms.TextBox surname_box;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox errors_textbox;
+        private System.Windows.Forms.PictureBox back_pictureBox;
     }
 }

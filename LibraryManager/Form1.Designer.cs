@@ -274,6 +274,7 @@
             this.ClientSize = new System.Drawing.Size(1618, 1212);
             this.Controls.Add(this.login_wrapper);
             this.Controls.Add(this.panel1);
+            this.Location = new System.Drawing.Point(1000, 1000);
             this.Name = "Form1";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -23,7 +23,7 @@
             this.createAccountService = new CreateAccountService(this.user);
         }
 
-        public string TheValue
+        public string Email
         {
             get { return email_box.Text; }
         }
@@ -64,5 +64,9 @@
             this.changeFormService.Change(this, new VerifyEmail(email_box.Text));
         }
 
+        private void back_pictureBox_Click(object sender, EventArgs e)
+        {
+            this.changeFormService.Change(this, new Form1());
+        }
     }
 }

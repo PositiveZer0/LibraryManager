@@ -50,6 +50,7 @@
 
             this.showErrorService.Show(5000, "Code is sent to email");
             await this.codeValidator.GenerateAsync(email);
+            email_box.ReadOnly = true;
         }
 
 
@@ -96,6 +97,11 @@
         private void confirm_psw_pic_Click(object sender, EventArgs e)
         {
             newPassword_box.UseSystemPasswordChar = !newPassword_box.UseSystemPasswordChar;
+        }
+
+        private void back_pictureBox_Click(object sender, EventArgs e)
+        {
+            this.changeFormService.Change(this, new Form1());
         }
     }
 }

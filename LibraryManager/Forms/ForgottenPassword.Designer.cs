@@ -55,6 +55,7 @@
             this.forgottenPassword_label = new System.Windows.Forms.Label();
             this.sendCode_btn = new System.Windows.Forms.Button();
             this.resendCode_btn = new System.Windows.Forms.Button();
+            this.back_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -65,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.confirm_psw_pic)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -366,11 +368,23 @@
             this.resendCode_btn.UseVisualStyleBackColor = false;
             this.resendCode_btn.Click += new System.EventHandler(this.resendCode_btn_Click);
             // 
+            // back_pictureBox
+            // 
+            this.back_pictureBox.Image = global::LibraryManager.Properties.Resources.back;
+            this.back_pictureBox.Location = new System.Drawing.Point(547, 0);
+            this.back_pictureBox.Name = "back_pictureBox";
+            this.back_pictureBox.Size = new System.Drawing.Size(118, 67);
+            this.back_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.back_pictureBox.TabIndex = 26;
+            this.back_pictureBox.TabStop = false;
+            this.back_pictureBox.Click += new System.EventHandler(this.back_pictureBox_Click);
+            // 
             // ForgottenPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1618, 1212);
+            this.Controls.Add(this.back_pictureBox);
             this.Controls.Add(this.resendCode_btn);
             this.Controls.Add(this.sendCode_btn);
             this.Controls.Add(this.forgottenPassword_label);
@@ -402,6 +416,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,5 +450,6 @@
         private System.Windows.Forms.Label forgottenPassword_label;
         private System.Windows.Forms.Button sendCode_btn;
         private System.Windows.Forms.Button resendCode_btn;
+        private System.Windows.Forms.PictureBox back_pictureBox;
     }
 }

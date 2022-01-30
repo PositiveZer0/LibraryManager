@@ -29,6 +29,7 @@
         {
             InitializeComponent();
             email_box.Text = userEmail;
+            this.email = email_box.Text;
             this.timer = new Timer();
             this.changeFormService = new ChangeFormService();
             this.user = new EfDeletableEntityRepository<User>(new LibraryManagerContext());
@@ -42,7 +43,6 @@
             base.OnLoad(e);
 
             //Generate first six digit code
-            this.email = email_box.Text;
             await this.codeValidator.GenerateAsync(this.email);
         }
 
@@ -66,6 +66,11 @@
         {
             this.showErrorService.Show(5000, "New code is sent");
             await this.codeValidator.ResendCode(this.email);
+        }
+
+        private void back_pictureBox_Click(object sender, EventArgs e)
+        {
+            this.changeFormService.Change(this, new CreateAccount());
         }
     }
 }
