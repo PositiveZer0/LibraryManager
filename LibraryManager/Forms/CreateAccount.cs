@@ -59,7 +59,7 @@
                 errors_textbox.Text = errors;
                 return;
             }
-
+            //todo: create acc only after verification and make back button auto fill last filled acc
             await this.createAccountService.CreateAccount(name, surname, email, password, role, isEmailVerified);
             this.changeFormService.Change(this, new VerifyEmail(email_box.Text));
         }
