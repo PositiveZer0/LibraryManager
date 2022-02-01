@@ -57,7 +57,7 @@
             this.menu_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.menu_panel.Location = new System.Drawing.Point(0, 0);
             this.menu_panel.Name = "menu_panel";
-            this.menu_panel.Size = new System.Drawing.Size(408, 1212);
+            this.menu_panel.Size = new System.Drawing.Size(408, 1262);
             this.menu_panel.TabIndex = 2;
             // 
             // profile_btn
@@ -188,7 +188,7 @@
             this.logo_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.logo_panel.Location = new System.Drawing.Point(408, 0);
             this.logo_panel.Name = "logo_panel";
-            this.logo_panel.Size = new System.Drawing.Size(1210, 100);
+            this.logo_panel.Size = new System.Drawing.Size(1560, 100);
             this.logo_panel.TabIndex = 3;
             // 
             // description_label
@@ -198,7 +198,7 @@
             this.description_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.description_label.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.description_label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.description_label.Location = new System.Drawing.Point(506, 14);
+            this.description_label.Location = new System.Drawing.Point(681, 14);
             this.description_label.Name = "description_label";
             this.description_label.Size = new System.Drawing.Size(232, 67);
             this.description_label.TabIndex = 0;
@@ -211,14 +211,14 @@
             this.form_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.form_panel.Location = new System.Drawing.Point(408, 100);
             this.form_panel.Name = "form_panel";
-            this.form_panel.Size = new System.Drawing.Size(1210, 1112);
+            this.form_panel.Size = new System.Drawing.Size(1560, 1162);
             this.form_panel.TabIndex = 0;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1618, 1212);
+            this.ClientSize = new System.Drawing.Size(1968, 1262);
             this.Controls.Add(this.form_panel);
             this.Controls.Add(this.logo_panel);
             this.Controls.Add(this.menu_panel);

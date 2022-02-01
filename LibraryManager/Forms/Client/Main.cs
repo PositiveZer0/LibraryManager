@@ -19,6 +19,7 @@
         private void books_btn_Click(object sender, EventArgs e)
         {
             changeDescriptionText("All Books");
+            openChildForm(new Books());
         }
 
 

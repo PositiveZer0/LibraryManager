@@ -76,6 +76,7 @@
 
         private void login_btn_Click(object sender, EventArgs e)
         {
+            this.changeFormService.Change(this, new Main());
             var username = username_box.Text;
             var password = password_box.Text;
 
