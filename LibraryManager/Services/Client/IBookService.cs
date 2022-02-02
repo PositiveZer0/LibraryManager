@@ -4,12 +4,13 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Threading.Tasks;
 
     public interface IBookService
     {
         void AddBook(BookViewModel book);
 
-        void BorrowBook(string userId, int bookId);
+        Task BorrowBook(int bookId);
 
     }
 }

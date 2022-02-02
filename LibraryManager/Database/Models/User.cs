@@ -24,6 +24,8 @@
 
         public bool IsEmailVerified { get; set; }
 
+        public bool IsLoggedIn { get; set; }
+
         public ICollection<BorrowedBook> BorrowedBooks{ get; set; }
     }
 }
