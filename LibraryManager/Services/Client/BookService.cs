@@ -54,6 +54,21 @@
             await this.borrowedBooks.SaveChangesAsync();
         }
 
+        public List<BookViewModel> GetAllBooks()
+        {
+            var books = this.db.Books.Select(x => new BookViewModel
+            {
+                AuthorName = x.AuthorName,
+                Description = x.Description,
+                Genre = x.Genre,
+                Quantity = x.Quantity,
+                Title = x.Title,
+            }).ToList();
+
+            return books;
+        }
+        
+
         private bool IsBookIdReal(int bookId)
         {
             var book = this.db.Books.FirstOrDefault(x => x.Id == bookId);
@@ -72,5 +87,6 @@
             book.Quantity--;
             this.db.SaveChanges();
         }
+
     }
 }

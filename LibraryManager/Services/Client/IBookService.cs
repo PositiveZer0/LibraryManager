@@ -12,5 +12,7 @@
 
         Task BorrowBook(int bookId);
 
+        List<BookViewModel> GetAllBooks();
+
     }
 }
