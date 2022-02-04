@@ -31,11 +31,13 @@
         private void available_btn_Click(object sender, EventArgs e)
         {
             changeDescriptionText("Available books");
+            openChildForm(new Books((sender as Button).Text));
         }
 
         private void borrowed_books_btn_Click(object sender, EventArgs e)
         {
             changeDescriptionText("Borrowed books");
+            openChildForm(new Books());
         }
 
         private void profile_btn_Click(object sender, EventArgs e)

@@ -14,5 +14,10 @@
 
         List<BookViewModel> GetAllBooks();
 
+        List<BookViewModel> GetAllAvailableBooks();
+
+
+        List<BookViewModel> GetAllBorrowedBooks();
+
     }
 }

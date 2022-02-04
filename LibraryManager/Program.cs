@@ -13,7 +13,7 @@ namespace LibraryManager
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static async Task Main()
+        static void Main()
         {
             ////Ensure that database is created
             var db = new LibraryManagerContext();
@@ -24,7 +24,7 @@ namespace LibraryManager
             //db.SaveChanges();
             var sendGrid = new SendGridEmailSender(ConfigurationConstants.SENDGRID_APIKEY);
             //sender, sender name, receiver
-            await sendGrid.SendEmailAsync("azsumemi@gmail.com", "emo", "ghostinthewires@abv.bg", "test", "Second email send");
+            //await sendGrid.SendEmailAsync("azsumemi@gmail.com", "emo", "ghostinthewires@abv.bg", "test", "Second email send");
             Console.WriteLine(ConfigurationConstants.SERVER_NAME);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();

@@ -67,7 +67,33 @@
 
             return books;
         }
-        
+
+        public List<BookViewModel> GetAllBorrowedBooks()
+        {
+            var borrowedBooks = this.db.Users.Where(x => x.IsLoggedIn == true).Select(x => x.BorrowedBooks.Select(x => new BookViewModel
+            {
+                AuthorName = x.Book.AuthorName,
+                Description = x.Book.Description,
+                Genre = x.Book.Genre,
+                Quantity = x.Book.Quantity,
+                Title = x.Book.Title,
+            })).FirstOrDefault();
+
+            return borrowedBooks.ToList();
+        }
+        public List<BookViewModel> GetAllAvailableBooks()
+        {
+            var availableBooks = this.db.Books.Where(x => x.Quantity > 0).Select(x => new BookViewModel
+            {
+                AuthorName = x.AuthorName,
+                Description = x.Description,
+                Genre = x.Genre,
+                Quantity = x.Quantity,
+                Title = x.Title,
+            });
+
+            return availableBooks.ToList();
+        }
 
         private bool IsBookIdReal(int bookId)
         {

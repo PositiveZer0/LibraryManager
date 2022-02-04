@@ -11,16 +11,18 @@
 
     public partial class Books : Form
     {
+        string method;
         IBookService bookService;
         LibraryManagerContext db;
         IDeletableEntityRepository<BorrowedBook> borrowedBooks;
 
-        public Books()
+        public Books(string method = "All")
         {
             InitializeComponent();
             this.db = new LibraryManagerContext();
             this.borrowedBooks = new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext());
             this.bookService = new BookService(this.db, this.borrowedBooks);
+            this.method = method;
         }
 
         private void Books_Load(object sender, EventArgs e)
@@ -35,6 +37,10 @@
             //    Title = "Romeo and Juliet"
             //};
             var list = new BindingList<BookViewModel>(this.bookService.GetAllBooks());
+            if (this.method == "Available")
+            {
+                list = new BindingList<BookViewModel>(this.bookService.GetAllAvailableBooks());
+            }
             books_dataGridView.DataSource = list;
             //books_dataGridView.Columns["IsDeleted"].Visible = false;
             //books_dataGridView.Columns["DeletedOn"].Visible = false;
