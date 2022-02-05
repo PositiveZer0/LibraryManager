@@ -17,7 +17,7 @@
         List<BookViewModel> GetAllAvailableBooks();
 
 
-        List<BookViewModel> GetAllBorrowedBooks();
+        List<BorrowedBookViewModel> GetAllBorrowedBooks();
 
     }
 }

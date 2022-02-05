@@ -37,10 +37,19 @@
             //    Title = "Romeo and Juliet"
             //};
             var list = new BindingList<BookViewModel>(this.bookService.GetAllBooks());
+
+            if (this.method == "Borrowed books")
+            {
+                var borrowedBooks = new BindingList<BorrowedBookViewModel>(this.bookService.GetAllBorrowedBooks());
+                books_dataGridView.DataSource = borrowedBooks;
+                return;
+            }
+
             if (this.method == "Available")
             {
                 list = new BindingList<BookViewModel>(this.bookService.GetAllAvailableBooks());
             }
+
             books_dataGridView.DataSource = list;
             //books_dataGridView.Columns["IsDeleted"].Visible = false;
             //books_dataGridView.Columns["DeletedOn"].Visible = false;

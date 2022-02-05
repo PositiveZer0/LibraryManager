@@ -39,6 +39,7 @@
             this.books_dataGridView.Name = "books_dataGridView";
             this.books_dataGridView.RowHeadersWidth = 102;
             this.books_dataGridView.RowTemplate.Height = 49;
+            this.books_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.books_dataGridView.Size = new System.Drawing.Size(1558, 890);
             this.books_dataGridView.TabIndex = 0;
             // 

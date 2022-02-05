@@ -37,7 +37,7 @@
         private void borrowed_books_btn_Click(object sender, EventArgs e)
         {
             changeDescriptionText("Borrowed books");
-            openChildForm(new Books());
+            openChildForm(new Books((sender as Button).Text));
         }
 
         private void profile_btn_Click(object sender, EventArgs e)

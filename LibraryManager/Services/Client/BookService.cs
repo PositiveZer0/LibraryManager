@@ -68,15 +68,18 @@
             return books;
         }
 
-        public List<BookViewModel> GetAllBorrowedBooks()
+        public List<BorrowedBookViewModel> GetAllBorrowedBooks()
         {
-            var borrowedBooks = this.db.Users.Where(x => x.IsLoggedIn == true).Select(x => x.BorrowedBooks.Select(x => new BookViewModel
+            var borrowedBooks = this.db.Users.Where(x => x.IsLoggedIn == true)
+                .Select(x => x.BorrowedBooks.Select(x => new BorrowedBookViewModel
             {
                 AuthorName = x.Book.AuthorName,
                 Description = x.Book.Description,
                 Genre = x.Book.Genre,
                 Quantity = x.Book.Quantity,
                 Title = x.Book.Title,
+                From = x.From.Date,
+                To = x.To.Date,
             })).FirstOrDefault();
 
             return borrowedBooks.ToList();
