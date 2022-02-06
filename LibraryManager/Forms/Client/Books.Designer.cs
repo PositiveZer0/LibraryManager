@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.books_dataGridView = new System.Windows.Forms.DataGridView();
+            this.search_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.books_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,11 +44,20 @@
             this.books_dataGridView.Size = new System.Drawing.Size(1558, 890);
             this.books_dataGridView.TabIndex = 0;
             // 
+            // search_textBox
+            // 
+            this.search_textBox.Location = new System.Drawing.Point(85, 42);
+            this.search_textBox.Name = "search_textBox";
+            this.search_textBox.Size = new System.Drawing.Size(407, 47);
+            this.search_textBox.TabIndex = 1;
+            this.search_textBox.TextChanged += new System.EventHandler(this.search_textBox_TextChanged);
+            // 
             // Books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1560, 1162);
+            this.Controls.Add(this.search_textBox);
             this.Controls.Add(this.books_dataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Books";
@@ -55,11 +65,13 @@
             this.Load += new System.EventHandler(this.Books_Load);
             ((System.ComponentModel.ISupportInitialize)(this.books_dataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView books_dataGridView;
+        private System.Windows.Forms.TextBox search_textBox;
     }
 }

@@ -98,6 +98,21 @@
             return availableBooks.ToList();
         }
 
+        public List<BookViewModel> SearchBooks(string word)
+        {
+            //todo: is it better to reuse default method?
+            var searchedBooks = this.db.Books.Where(x => x.Title.Contains(word)).Select(x => new BookViewModel
+            {
+                AuthorName = x.AuthorName,
+                Description = x.Description,
+                Genre = x.Genre,
+                Quantity = x.Quantity,
+                Title = x.Title,
+            });
+
+            return searchedBooks.ToList();
+        }
+
         private bool IsBookIdReal(int bookId)
         {
             var book = this.db.Books.FirstOrDefault(x => x.Id == bookId);
@@ -117,5 +132,6 @@
             this.db.SaveChanges();
         }
 
+        
     }
 }

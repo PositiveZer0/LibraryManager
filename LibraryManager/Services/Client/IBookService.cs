@@ -19,5 +19,7 @@
 
         List<BorrowedBookViewModel> GetAllBorrowedBooks();
 
+        List<BookViewModel> SearchBooks(string word);
+
     }
 }

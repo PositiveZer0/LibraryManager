@@ -60,5 +60,13 @@
 
         }
 
+        private void search_textBox_TextChanged(object sender, EventArgs e)
+        {
+            var word = this.search_textBox.Text;
+
+            var list = new BindingList<BookViewModel>(this.bookService.SearchBooks(word));
+
+            books_dataGridView.DataSource = list;
+        }
     }
 }
