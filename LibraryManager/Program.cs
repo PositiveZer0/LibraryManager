@@ -1,9 +1,11 @@
 namespace LibraryManager
 {
     using System;
+    using System.Reflection;
     using System.Threading.Tasks;
     using System.Windows.Forms;
-
+    using AutoMapper;
+    using LibraryManager.Automapper;
     using LibraryManager.Database.Data;
     using LibraryManager.SendGrid;
 
@@ -23,9 +25,13 @@ namespace LibraryManager
             //db.Books.Add(book);
             //db.SaveChanges();
             var sendGrid = new SendGridEmailSender(ConfigurationConstants.SENDGRID_APIKEY);
+
+            //start automapper
+            AutoMapperConfig.RegisterMappings(Assembly.GetExecutingAssembly());
             //sender, sender name, receiver
             //await sendGrid.SendEmailAsync("azsumemi@gmail.com", "emo", "ghostinthewires@abv.bg", "test", "Second email send");
             Console.WriteLine(ConfigurationConstants.SERVER_NAME);
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

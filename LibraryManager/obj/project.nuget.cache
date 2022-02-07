@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KkA6TVh0OfrU80FmF6Jq6ddEOp4LSzY4guE6wNxTD2AwvLOXsigNIAQsPda98srOeClzmX9D9L61jybBnHQLxQ==",
+  "dgSpecHash": "kn6IStlJSTSMTEnTMF5MCy49GzwdSRMZGiPf2YIILl16BOebt0wVl+1VzL7I3h2Ayp1W2q6rti9m+8Psulz5hw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rusev\\Desktop\\LibraryManager\\LibraryManager\\LibraryManager.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Rusev\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Rusev\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Rusev\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\Rusev\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

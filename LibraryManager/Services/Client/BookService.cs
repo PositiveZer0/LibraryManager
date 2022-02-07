@@ -1,5 +1,7 @@
 ﻿namespace LibraryManager.Services.Client
 {
+    using AutoMapper.QueryableExtensions;
+    using LibraryManager.Automapper;
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
@@ -56,14 +58,7 @@
 
         public List<BookViewModel> GetAllBooks()
         {
-            var books = this.db.Books.Select(x => new BookViewModel
-            {
-                AuthorName = x.AuthorName,
-                Description = x.Description,
-                Genre = x.Genre,
-                Quantity = x.Quantity,
-                Title = x.Title,
-            }).ToList();
+            var books = this.db.Books.To<BookViewModel>().ToList();
 
             return books;
         }
@@ -86,14 +81,7 @@
         }
         public List<BookViewModel> GetAllAvailableBooks()
         {
-            var availableBooks = this.db.Books.Where(x => x.Quantity > 0).Select(x => new BookViewModel
-            {
-                AuthorName = x.AuthorName,
-                Description = x.Description,
-                Genre = x.Genre,
-                Quantity = x.Quantity,
-                Title = x.Title,
-            });
+            var availableBooks = this.db.Books.Where(x => x.Quantity > 0).To<BookViewModel>();
 
             return availableBooks.ToList();
         }
@@ -101,14 +89,7 @@
         public List<BookViewModel> SearchBooks(string word)
         {
             //todo: is it better to reuse default method?
-            var searchedBooks = this.db.Books.Where(x => x.Title.Contains(word)).Select(x => new BookViewModel
-            {
-                AuthorName = x.AuthorName,
-                Description = x.Description,
-                Genre = x.Genre,
-                Quantity = x.Quantity,
-                Title = x.Title,
-            });
+            var searchedBooks = this.db.Books.Where(x => x.Title.Contains(word)).To<BookViewModel>();
 
             return searchedBooks.ToList();
         }
