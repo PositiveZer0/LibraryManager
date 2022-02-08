@@ -7,7 +7,10 @@ namespace LibraryManager
     using AutoMapper;
     using LibraryManager.Automapper;
     using LibraryManager.Database.Data;
+    using LibraryManager.Database.Models;
+    using LibraryManager.Database.Repositories;
     using LibraryManager.SendGrid;
+    using LibraryManager.Services.Client;
 
     static class Program
     {
@@ -15,7 +18,7 @@ namespace LibraryManager
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static async Task Main()
         {
             ////Ensure that database is created
             var db = new LibraryManagerContext();
@@ -25,6 +28,9 @@ namespace LibraryManager
             //db.Books.Add(book);
             //db.SaveChanges();
             var sendGrid = new SendGridEmailSender(ConfigurationConstants.SENDGRID_APIKEY);
+
+            var bookService = new BookService(new LibraryManagerContext(), new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext()));
+            await bookService.SendEmailBorrowedBooks();
 
             //start automapper
             AutoMapperConfig.RegisterMappings(Assembly.GetExecutingAssembly());

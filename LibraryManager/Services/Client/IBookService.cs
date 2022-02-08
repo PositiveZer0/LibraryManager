@@ -21,5 +21,7 @@
 
         List<BookViewModel> SearchBooks(string word);
 
+        public Task SendEmailBorrowedBooks();
+
     }
 }

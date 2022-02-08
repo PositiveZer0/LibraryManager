@@ -5,6 +5,7 @@
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
+    using LibraryManager.SendGrid;
     using LibraryManager.ViewModels;
     using System;
     using System.Collections.Generic;
@@ -17,7 +18,8 @@
         private LibraryManagerContext db;
         private readonly IDeletableEntityRepository<BorrowedBook> borrowedBooks;
 
-        public BookService(LibraryManagerContext db, IDeletableEntityRepository<BorrowedBook> borrowedBooks)
+        public BookService(LibraryManagerContext db,
+            IDeletableEntityRepository<BorrowedBook> borrowedBooks)
         {
             this.db = db;
             this.borrowedBooks = borrowedBooks;
@@ -67,15 +69,15 @@
         {
             var borrowedBooks = this.db.Users.Where(x => x.IsLoggedIn == true)
                 .Select(x => x.BorrowedBooks.Select(x => new BorrowedBookViewModel
-            {
-                AuthorName = x.Book.AuthorName,
-                Description = x.Book.Description,
-                Genre = x.Book.Genre,
-                Quantity = x.Book.Quantity,
-                Title = x.Book.Title,
-                From = x.From.Date,
-                To = x.To.Date,
-            })).FirstOrDefault();
+                {
+                    AuthorName = x.Book.AuthorName,
+                    Description = x.Book.Description,
+                    Genre = x.Book.Genre,
+                    Quantity = x.Book.Quantity,
+                    Title = x.Book.Title,
+                    From = x.From.Date,
+                    To = x.To.Date,
+                })).FirstOrDefault();
 
             return borrowedBooks.ToList();
         }
@@ -92,6 +94,33 @@
             var searchedBooks = this.db.Books.Where(x => x.Title.Contains(word)).To<BookViewModel>();
 
             return searchedBooks.ToList();
+        }
+
+        public async Task SendEmailBorrowedBooks()
+        {
+            var emailsToSend = this.db.BorrowedBooks
+                .Where(x => x.SendWarning == false && x.To.Date <= DateTime.Now.AddDays(7))
+                .Select(x => new
+                {
+                    x.To.Date,
+                    x.SendWarning,
+                    x.User.Email,
+                    x.Book.Title,
+                    x.Book.AuthorName,
+                })
+                .ToList();
+
+            var sendGrid = new SendGridEmailSender(ConfigurationConstants.SENDGRID_APIKEY);
+            foreach (var email in emailsToSend)
+            {
+                //sender, sender name, receiver
+                await sendGrid.SendEmailAsync("azsumemi@gmail.com", 
+                    "Library Manager", 
+                    $"{email.Email}",
+                    "Return book reminder", 
+                    $"We just want to remind you that you have to return the book {email.Title} by {email.AuthorName} " +
+                    $"till {email.Date.Date}.");
+            }
         }
 
         private bool IsBookIdReal(int bookId)
@@ -113,6 +142,5 @@
             this.db.SaveChanges();
         }
 
-        
     }
 }
