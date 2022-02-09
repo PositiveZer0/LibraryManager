@@ -7,6 +7,7 @@
     using LibraryManager.Database.Repositories;
     using LibraryManager.SendGrid;
     using LibraryManager.ViewModels;
+    using Microsoft.EntityFrameworkCore;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -100,27 +101,22 @@
         {
             var emailsToSend = this.db.BorrowedBooks
                 .Where(x => x.SendWarning == false && x.To.Date <= DateTime.Now.AddDays(7))
-                .Select(x => new
-                {
-                    x.To.Date,
-                    x.SendWarning,
-                    x.User.Email,
-                    x.Book.Title,
-                    x.Book.AuthorName,
-                })
-                .ToList();
+                .Include(x => x.Book)
+                .Include(x => x.User);
 
             var sendGrid = new SendGridEmailSender(ConfigurationConstants.SENDGRID_APIKEY);
             foreach (var email in emailsToSend)
             {
+               email.SendWarning = true;
                 //sender, sender name, receiver
-                await sendGrid.SendEmailAsync("azsumemi@gmail.com", 
-                    "Library Manager", 
-                    $"{email.Email}",
-                    "Return book reminder", 
-                    $"We just want to remind you that you have to return the book {email.Title} by {email.AuthorName} " +
-                    $"till {email.Date.Date}.");
+                await sendGrid.SendEmailAsync("azsumemi@gmail.com",
+                    "Library Manager",
+                    $"{email.User.Email}",
+                    "Return book reminder",
+                    $"We just want to remind you that you have to return the book {email.Book.Title} by {email.Book.AuthorName} " +
+                    $"till {email.To.ToString("dd/MM/yyyy")}.");
             }
+            await this.db.SaveChangesAsync();
         }
 
         private bool IsBookIdReal(int bookId)
