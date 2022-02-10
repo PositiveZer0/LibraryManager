@@ -1,18 +1,17 @@
 ﻿namespace LibraryManager.Services.Client
 {
-    using AutoMapper.QueryableExtensions;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.EntityFrameworkCore;
+
     using LibraryManager.Automapper;
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
     using LibraryManager.SendGrid;
     using LibraryManager.ViewModels;
-    using Microsoft.EntityFrameworkCore;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class BookService : IBookService
     {

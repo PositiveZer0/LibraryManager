@@ -1,7 +1,7 @@
 ﻿namespace LibraryManager.Services.Login
 {
     using System.Linq;
-    using System.Threading.Tasks;
+
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
     using LibraryManager.Services.Login.ValidationCreateAccount;

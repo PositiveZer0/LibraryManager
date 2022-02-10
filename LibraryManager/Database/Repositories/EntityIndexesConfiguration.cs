@@ -1,11 +1,9 @@
 ﻿namespace LibraryManager.Database.Repositories
 {
-    using LibraryManager.Database.Repositories.Models;
-    using Microsoft.EntityFrameworkCore;
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
+
+    using Microsoft.EntityFrameworkCore;
+    using LibraryManager.Database.Repositories.Models;
 
     internal static class EntityIndexesConfiguration
     {

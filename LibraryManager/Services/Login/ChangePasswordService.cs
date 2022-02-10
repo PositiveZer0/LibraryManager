@@ -1,14 +1,11 @@
 ﻿namespace LibraryManager.Services.Login
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
     using LibraryManager.Services.Login.ValidationCreateAccount;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     public class ChangePasswordService : IChangePasswordService
     {
         private readonly IDeletableEntityRepository<User> user;

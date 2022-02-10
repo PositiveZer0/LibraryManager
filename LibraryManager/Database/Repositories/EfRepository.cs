@@ -1,12 +1,11 @@
 ﻿namespace LibraryManager.Database.Repositories
 {
-    using LibraryManager.Database.Data;
-    using Microsoft.EntityFrameworkCore;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
+    using Microsoft.EntityFrameworkCore;
+
+    using LibraryManager.Database.Data;
 
     public class EfRepository<TEntity> : IRepository<TEntity>
         where TEntity : class

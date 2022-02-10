@@ -1,14 +1,15 @@
 ﻿namespace LibraryManager.Database.Data
 {
-    using LibraryManager.Database.Models;
-    using LibraryManager.Database.Repositories;
-    using LibraryManager.Database.Repositories.Models;
-    using Microsoft.EntityFrameworkCore;
     using System;
     using System.Linq;
     using System.Reflection;
     using System.Threading;
     using System.Threading.Tasks;
+    using Microsoft.EntityFrameworkCore;
+
+    using LibraryManager.Database.Models;
+    using LibraryManager.Database.Repositories;
+    using LibraryManager.Database.Repositories.Models;
 
     public class LibraryManagerContext : DbContext
     {

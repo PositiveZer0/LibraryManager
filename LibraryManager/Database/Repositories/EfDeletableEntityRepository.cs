@@ -1,13 +1,12 @@
 ﻿namespace LibraryManager.Database.Repositories
 {
-    using LibraryManager.Database.Data;
-    using LibraryManager.Database.Repositories.Models;
     using Microsoft.EntityFrameworkCore;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
+
+    using LibraryManager.Database.Data;
+    using LibraryManager.Database.Repositories.Models;
 
     public class EfDeletableEntityRepository<TEntity> : EfRepository<TEntity>, IDeletableEntityRepository<TEntity>
         where TEntity : class, IDeletableEntity

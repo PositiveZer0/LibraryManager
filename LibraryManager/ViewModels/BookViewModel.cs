@@ -2,9 +2,6 @@
 {
     using LibraryManager.Automapper;
     using LibraryManager.Database.Models;
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     public class BookViewModel : IMapFrom<Book>
     {

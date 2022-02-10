@@ -1,10 +1,9 @@
 ﻿namespace LibraryManager.Services.Client
 {
-    using LibraryManager.ViewModels;
-    using System;
     using System.Collections.Generic;
-    using System.Text;
     using System.Threading.Tasks;
+
+    using LibraryManager.ViewModels;
 
     public interface IBookService
     {

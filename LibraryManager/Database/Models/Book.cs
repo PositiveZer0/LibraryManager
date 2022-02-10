@@ -1,9 +1,8 @@
 ﻿namespace LibraryManager.Database.Models
 {
-    using LibraryManager.Database.Repositories.Models;
-    using System;
     using System.Collections.Generic;
-    using System.Text;
+
+    using LibraryManager.Database.Repositories.Models;
 
     public class Book : BaseDeletableModel<int>
     {

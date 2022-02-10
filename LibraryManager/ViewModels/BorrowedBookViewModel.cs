@@ -1,10 +1,9 @@
 ﻿namespace LibraryManager.ViewModels
 {
+    using System;
+
     using LibraryManager.Automapper;
     using LibraryManager.Database.Models;
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     public class BorrowedBookViewModel : BookViewModel, IMapFrom<BorrowedBook>
     {
