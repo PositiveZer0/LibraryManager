@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+
     using LibraryManager.Database.Repositories.Models;
 
     public class User : BaseDeletableModel<string>

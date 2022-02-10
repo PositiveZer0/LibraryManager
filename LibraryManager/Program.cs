@@ -4,7 +4,7 @@ namespace LibraryManager
     using System.Reflection;
     using System.Threading.Tasks;
     using System.Windows.Forms;
-    using AutoMapper;
+
     using LibraryManager.Automapper;
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
