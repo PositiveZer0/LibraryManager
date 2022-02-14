@@ -13,7 +13,6 @@
         public LoginService(IDeletableEntityRepository<User> user)
         {
             this.user = user;
-            var rest = new int[10];
         }
 
 

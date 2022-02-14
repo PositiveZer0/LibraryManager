@@ -68,5 +68,27 @@
 
             books_dataGridView.DataSource = list;
         }
+
+        private void books_dataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var row = books_dataGridView.Rows[e.RowIndex];
+            var title = row.Cells["Title"].Value.ToString();
+            var authorName = row.Cells["AuthorName"].Value.ToString();
+            var quantity = (int)row.Cells["Quantity"].Value;
+            var genre = row.Cells["Genre"].Value.ToString();
+            var description = row.Cells["Description"].Value.ToString();
+
+            var book = new BookViewModel
+            {
+                Title = title,
+                AuthorName = authorName,
+                Quantity = quantity,
+                Genre = genre,
+                Description = description,
+            };
+
+            var currentBook = new CurrentBook(book);
+            currentBook.Show(this);
+        }
     }
 }

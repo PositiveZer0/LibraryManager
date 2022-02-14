@@ -35,14 +35,18 @@
             // 
             // books_dataGridView
             // 
+            this.books_dataGridView.AllowUserToAddRows = false;
+            this.books_dataGridView.AllowUserToDeleteRows = false;
             this.books_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.books_dataGridView.Location = new System.Drawing.Point(-10, 131);
             this.books_dataGridView.Name = "books_dataGridView";
+            this.books_dataGridView.ReadOnly = true;
             this.books_dataGridView.RowHeadersWidth = 102;
             this.books_dataGridView.RowTemplate.Height = 49;
             this.books_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.books_dataGridView.Size = new System.Drawing.Size(1558, 890);
             this.books_dataGridView.TabIndex = 0;
+            this.books_dataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.books_dataGridView_CellMouseDoubleClick);
             // 
             // search_textBox
             // 
