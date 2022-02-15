@@ -35,14 +35,14 @@
             if (!IsBookIdReal(bookId))
             {
                 //todo: throw error 
-                return;
+                throw new InvalidOperationException("Invalid book");
             }
 
             if (!CheckIfBookIsAvailable(bookId))
             {
                 //todo: need to throw excp cant borrow book
                 //make method string 
-                return;
+                throw new InvalidOperationException("Book is not available");
             }
             ReduceQuantity(bookId);
             var user = this.db.Users.FirstOrDefault(x => x.IsLoggedIn == true);
@@ -118,10 +118,15 @@
             await this.db.SaveChangesAsync();
         }
 
+
         private bool IsBookIdReal(int bookId)
         {
             var book = this.db.Books.FirstOrDefault(x => x.Id == bookId);
             return book != null;
+        }
+        public int GetBookIdByTitle(string title)
+        {
+            return this.db.Books.FirstOrDefault(x => x.Title == title).Id;
         }
 
         private bool CheckIfBookIsAvailable(int bookId)

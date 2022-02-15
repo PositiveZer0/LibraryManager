@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.title_textBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.borrow_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // title_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(219, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 47);
-            this.textBox1.TabIndex = 0;
+            this.title_textBox.Location = new System.Drawing.Point(219, 129);
+            this.title_textBox.Name = "title_textBox";
+            this.title_textBox.Size = new System.Drawing.Size(250, 47);
+            this.title_textBox.TabIndex = 0;
             // 
             // textBox2
             // 
@@ -78,17 +79,28 @@
             this.textBox6.Size = new System.Drawing.Size(250, 47);
             this.textBox6.TabIndex = 5;
             // 
+            // borrow_btn
+            // 
+            this.borrow_btn.Location = new System.Drawing.Point(911, 148);
+            this.borrow_btn.Name = "borrow_btn";
+            this.borrow_btn.Size = new System.Drawing.Size(228, 58);
+            this.borrow_btn.TabIndex = 6;
+            this.borrow_btn.Text = "Borrow book";
+            this.borrow_btn.UseVisualStyleBackColor = true;
+            this.borrow_btn.Click += new System.EventHandler(this.borrow_btn_Click);
+            // 
             // CurrentBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1404, 940);
+            this.Controls.Add(this.borrow_btn);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.title_textBox);
             this.Name = "CurrentBook";
             this.Text = "CurrentBook";
             this.Load += new System.EventHandler(this.CurrentBook_Load);
@@ -99,11 +111,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox title_textBox;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button borrow_btn;
     }
 }
