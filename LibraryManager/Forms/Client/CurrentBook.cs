@@ -30,16 +30,19 @@
 
         private void CurrentBook_Load(object sender, EventArgs e)
         {
-            title_textBox.Text = this.book.Title;
-            textBox2.Text = this.book.AuthorName;
-            textBox3.Text = this.book.Quantity.ToString();
-            textBox4.Text = this.book.Description;
-            textBox5.Text = this.book.Genre;
+            title_label.Text = this.book.Title;
+            author_label.Text = "by " + this.book.AuthorName;
+            description_textBox.Text = this.book.Description;
+            genre_label.Text = this.book.Genre;
+            if (title_label.Text.Length <= 25)
+            {
+                author_label.Location = new Point(758, 100);
+            }
         }
 
         private async void borrow_btn_Click(object sender, EventArgs e)
         {
-            var bookId = this.bookService.GetBookIdByTitle(this.title_textBox.Text);
+            var bookId = this.bookService.GetBookIdByTitle(this.title_label.Text);
             try
             {
                 await this.bookService.BorrowBook(bookId);

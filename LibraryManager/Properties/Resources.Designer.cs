@@ -93,6 +93,16 @@ namespace LibraryManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap harry_potter_and_the_philosopher_s_stone {
+            get {
+                object obj = ResourceManager.GetObject("harry-potter-and-the-philosopher-s-stone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap photo_1568667256549_094345857637 {
             get {
                 object obj = ResourceManager.GetObject("photo-1568667256549-094345857637", resourceCulture);
