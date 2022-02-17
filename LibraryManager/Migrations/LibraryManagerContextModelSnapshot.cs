@@ -29,6 +29,9 @@ namespace LibraryManager.Migrations
                     b.Property<string>("AuthorName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("BookImageId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -55,9 +58,40 @@ namespace LibraryManager.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BookImageId");
+
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("LibraryManager.Database.Models.BookImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("BookImage");
                 });
 
             modelBuilder.Entity("LibraryManager.Database.Models.BorrowedBook", b =>
@@ -182,6 +216,15 @@ namespace LibraryManager.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("LibraryManager.Database.Models.Book", b =>
+                {
+                    b.HasOne("LibraryManager.Database.Models.BookImage", "BookImage")
+                        .WithMany()
+                        .HasForeignKey("BookImageId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("LibraryManager.Database.Models.BorrowedBook", b =>
