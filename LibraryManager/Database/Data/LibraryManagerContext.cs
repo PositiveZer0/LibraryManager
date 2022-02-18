@@ -35,6 +35,9 @@
 
         public virtual DbSet<BorrowedBook> BorrowedBooks{ get; set; }
 
+        public virtual DbSet<BookImage> BookImage { get; set; }
+
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

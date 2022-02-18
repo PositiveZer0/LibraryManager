@@ -27,7 +27,8 @@
 
         public void AddBook(BookViewModel book)
         {
-            throw new NotImplementedException();
+            //Implement it
+            throw new InvalidOperationException();
         }
 
         public async Task BorrowBook(int bookId)
