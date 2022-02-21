@@ -21,6 +21,7 @@ namespace LibraryManager
         static async Task Main()
         {
             ////Ensure that database is created
+            /////work
             var db = new LibraryManagerContext();
             //db.Database.EnsureDeleted();
             db.Database.EnsureCreated();
