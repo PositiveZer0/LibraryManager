@@ -24,7 +24,7 @@
             this.db = new LibraryManagerContext(); 
             this.borrowedBook = new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext());
             this.bookService = new BookService(db, borrowedBook);
-
+            bookService.
         }
 
         private void button1_Click(object sender, EventArgs e)
