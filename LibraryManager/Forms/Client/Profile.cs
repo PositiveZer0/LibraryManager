@@ -9,6 +9,7 @@
     using System.ComponentModel;
     using System.Data;
     using System.Drawing;
+    using System.Linq;
     using System.Text;
     using System.Windows.Forms;
 
@@ -24,7 +25,10 @@
             this.db = new LibraryManagerContext(); 
             this.borrowedBook = new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext());
             this.bookService = new BookService(db, borrowedBook);
-            bookService.
+            var currentUser = this.db.Users.FirstOrDefault(x => x.IsLoggedIn == true);
+            name_box.Text = currentUser.Name;
+            surname_box.Text = currentUser.Surname;
+            email_box.Text = currentUser.Email;
         }
 
         private void button1_Click(object sender, EventArgs e)
