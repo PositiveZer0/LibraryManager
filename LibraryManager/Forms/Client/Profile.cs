@@ -25,6 +25,7 @@
             this.db = new LibraryManagerContext(); 
             this.borrowedBook = new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext());
             this.bookService = new BookService(db, borrowedBook);
+            //todo: refactor 
             var currentUser = this.db.Users.FirstOrDefault(x => x.IsLoggedIn == true);
             name_box.Text = currentUser.Name;
             surname_box.Text = currentUser.Surname;
