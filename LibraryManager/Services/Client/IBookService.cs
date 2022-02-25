@@ -7,7 +7,7 @@
 
     public interface IBookService
     {
-        void AddBook(BookViewModel book);
+        Task AddBookAsync(BookViewModel book);
 
         Task BorrowBook(int bookId);
 

@@ -25,10 +25,20 @@
             this.borrowedBooks = borrowedBooks;
         }
 
-        public void AddBook(BookViewModel book)
+        public async Task AddBookAsync(BookViewModel book)
         {
-            //Implement it
-            throw new InvalidOperationException();
+            var bookToAdd = new Book()
+            {
+                Title = book.Title,
+                AuthorName = book.AuthorName,
+                Genre = book.Genre,
+                Quantity = 1,
+                Description = book.Description,
+                BookImageId = null,
+            };
+
+            this.db.Books.Add(bookToAdd);
+            await this.db.SaveChangesAsync();
         }
 
         public async Task BorrowBook(int bookId)
@@ -107,7 +117,7 @@
             var sendGrid = new SendGridEmailSender(ConfigurationConstants.SENDGRID_APIKEY);
             foreach (var email in emailsToSend)
             {
-               email.SendWarning = true;
+                email.SendWarning = true;
                 //sender, sender name, receiver
                 await sendGrid.SendEmailAsync("azsumemi@gmail.com",
                     "Library Manager",

@@ -30,6 +30,7 @@
         {
             this.books_dataGridView = new System.Windows.Forms.DataGridView();
             this.search_textBox = new System.Windows.Forms.TextBox();
+            this.addBook_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.books_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +57,26 @@
             this.search_textBox.TabIndex = 1;
             this.search_textBox.TextChanged += new System.EventHandler(this.search_textBox_TextChanged);
             // 
+            // addBook_btn
+            // 
+            this.addBook_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
+            this.addBook_btn.FlatAppearance.BorderSize = 0;
+            this.addBook_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addBook_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addBook_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addBook_btn.Location = new System.Drawing.Point(1276, 1062);
+            this.addBook_btn.Name = "addBook_btn";
+            this.addBook_btn.Size = new System.Drawing.Size(221, 88);
+            this.addBook_btn.TabIndex = 22;
+            this.addBook_btn.Text = "Add Book";
+            this.addBook_btn.UseVisualStyleBackColor = false;
+            // 
             // Books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1560, 1162);
+            this.Controls.Add(this.addBook_btn);
             this.Controls.Add(this.search_textBox);
             this.Controls.Add(this.books_dataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -77,5 +93,6 @@
 
         private System.Windows.Forms.DataGridView books_dataGridView;
         private System.Windows.Forms.TextBox search_textBox;
+        private System.Windows.Forms.Button addBook_btn;
     }
 }

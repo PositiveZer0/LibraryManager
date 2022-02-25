@@ -3,6 +3,7 @@
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
+    using LibraryManager.Forms.Admin;
     using LibraryManager.Services.Client;
     using System;
     using System.Collections.Generic;
@@ -35,6 +36,12 @@
         private void button1_Click(object sender, EventArgs e)
         {
             this.bookService.BorrowBook(4);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var currentBook = new AddBook();
+            currentBook.Show(this);
         }
     }
 }

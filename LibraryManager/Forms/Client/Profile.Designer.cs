@@ -44,6 +44,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.editPhoto_btn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
@@ -214,11 +215,27 @@
             this.editPhoto_btn.Text = "Edit Photo";
             this.editPhoto_btn.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(1104, 848);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(306, 126);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "add book test";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1560, 1162);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.editPhoto_btn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.email_label);
@@ -263,5 +280,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button editPhoto_btn;
+        private System.Windows.Forms.Button button1;
     }
 }

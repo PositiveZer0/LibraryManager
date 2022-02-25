@@ -23,7 +23,7 @@
 
         public ICollection<BorrowedBook> BorrowedBooks { get; set; }
 
-        public int BookImageId { get; set; }
+        public int? BookImageId { get; set; }
 
         public BookImage BookImage { get; set; }
     }
