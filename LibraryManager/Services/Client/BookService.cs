@@ -27,6 +27,14 @@
 
         public async Task AddBookAsync(BookViewModel book)
         {
+            var image = new BookImage();
+            if (book.Image != null)
+            {
+                image.Image = book.Image;
+                this.db.BookImage.Add(image);
+                await this.db.SaveChangesAsync();
+            }
+           
             var bookToAdd = new Book()
             {
                 Title = book.Title,
@@ -34,7 +42,7 @@
                 Genre = book.Genre,
                 Quantity = 1,
                 Description = book.Description,
-                BookImageId = null,
+                BookImageId = image.Id,
             };
 
             this.db.Books.Add(bookToAdd);

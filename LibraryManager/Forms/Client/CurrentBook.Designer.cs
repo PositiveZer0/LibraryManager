@@ -39,7 +39,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::LibraryManager.Properties.Resources.harry_potter_and_the_philosopher_s_stone;
+            this.pictureBox1.Image = global::LibraryManager.Properties.Resources.back;
             this.pictureBox1.Location = new System.Drawing.Point(109, 81);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(412, 611);

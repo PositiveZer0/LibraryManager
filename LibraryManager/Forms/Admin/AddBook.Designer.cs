@@ -30,7 +30,7 @@
         {
             this.description_textBox = new System.Windows.Forms.TextBox();
             this.addBook_btn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.book_pictureBox = new System.Windows.Forms.PictureBox();
             this.addImage_btn = new System.Windows.Forms.Button();
             this.title_label = new System.Windows.Forms.Label();
             this.title_textBox = new System.Windows.Forms.TextBox();
@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.genre_textBox = new System.Windows.Forms.TextBox();
             this.description_label = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.book_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // description_textBox
@@ -66,15 +66,15 @@
             this.addBook_btn.UseVisualStyleBackColor = false;
             this.addBook_btn.Click += new System.EventHandler(this.addBook_btn_Click);
             // 
-            // pictureBox1
+            // book_pictureBox
             // 
-            this.pictureBox1.Image = global::LibraryManager.Properties.Resources.defaultBookCover;
-            this.pictureBox1.Location = new System.Drawing.Point(58, 105);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(412, 611);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.book_pictureBox.Image = global::LibraryManager.Properties.Resources.defaultBookCover;
+            this.book_pictureBox.Location = new System.Drawing.Point(58, 105);
+            this.book_pictureBox.Name = "book_pictureBox";
+            this.book_pictureBox.Size = new System.Drawing.Size(412, 611);
+            this.book_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.book_pictureBox.TabIndex = 13;
+            this.book_pictureBox.TabStop = false;
             // 
             // addImage_btn
             // 
@@ -89,6 +89,7 @@
             this.addImage_btn.TabIndex = 19;
             this.addImage_btn.Text = "Add Image";
             this.addImage_btn.UseVisualStyleBackColor = false;
+            this.addImage_btn.Click += new System.EventHandler(this.addImage_btn_Click);
             // 
             // title_label
             // 
@@ -173,10 +174,10 @@
             this.Controls.Add(this.addImage_btn);
             this.Controls.Add(this.description_textBox);
             this.Controls.Add(this.addBook_btn);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.book_pictureBox);
             this.Name = "AddBook";
             this.Text = "AddBook";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.book_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,7 +187,7 @@
 
         private System.Windows.Forms.TextBox description_textBox;
         private System.Windows.Forms.Button addBook_btn;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox book_pictureBox;
         private System.Windows.Forms.Button addImage_btn;
         private System.Windows.Forms.Label title_label;
         private System.Windows.Forms.TextBox title_textBox;
