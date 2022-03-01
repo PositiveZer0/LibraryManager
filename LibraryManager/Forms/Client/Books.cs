@@ -7,6 +7,7 @@
     using LibraryManager.ViewModels;
     using System;
     using System.ComponentModel;
+    using System.Drawing;
     using System.Windows.Forms;
 
     public partial class Books : Form
@@ -23,6 +24,7 @@
             this.borrowedBooks = new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext());
             this.bookService = new BookService(this.db, this.borrowedBooks);
             this.method = method;
+            StyleDatagridview();
         }
 
         private void Books_Load(object sender, EventArgs e)
@@ -51,6 +53,12 @@
             }
 
             books_dataGridView.DataSource = list;
+            books_dataGridView.Columns["Image"].Visible = false;
+            this.books_dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.books_dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.books_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.books_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.books_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             //books_dataGridView.Columns["IsDeleted"].Visible = false;
             //books_dataGridView.Columns["DeletedOn"].Visible = false;
             //books_dataGridView.Columns["Id"].Visible = false;
@@ -89,6 +97,26 @@
 
             var currentBook = new CurrentBook(book);
             currentBook.Show(this);
+        }
+
+        void StyleDatagridview()
+        {
+
+            books_dataGridView.BorderStyle = BorderStyle.None;
+            books_dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            books_dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            books_dataGridView.DefaultCellStyle.SelectionBackColor = Color.FromArgb(41, 125, 185);
+            books_dataGridView.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            books_dataGridView.BackgroundColor = Color.FromArgb(240, 240, 240);
+            books_dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;//optional
+            books_dataGridView.EnableHeadersVisualStyles = false;
+            books_dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            books_dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 12);
+            books_dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 125, 185);
+            books_dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(240, 240, 240);
+
+            
+
         }
     }
 }
