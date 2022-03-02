@@ -14,6 +14,7 @@
     {
         string email;
         Timer timer;
+        PasswordValidator passwordValidator;
         IShowErrorService showErrorService;
         IChangePasswordService changePasswordService;
         IDeletableEntityRepository<User> user;
@@ -23,6 +24,7 @@
             InitializeComponent();
             this.email = email;
             this.timer = new Timer();
+            this.passwordValidator = new PasswordValidator();
             this.showErrorService = new ShowErrorService(errors_textbox, timer);
             this.user = new EfDeletableEntityRepository<User>(new LibraryManagerContext());
             this.changePasswordService = new ChangePasswordService(this.user);
@@ -48,15 +50,16 @@
             var oldPassword = oldPassword_box.Text;
             var password = newPassword_box.Text;
             var confirmPassword = confirmNewPsw_box.Text;
-            var currentUser = this.user.All().FirstOrDefault(x => x.Email == this.email);
-            if (!SecurePasswordHasher.Verify(oldPassword, currentUser.Password))
+
+            var currentUserPassword = changePasswordService.GetCurrentUserPassword(this.email);
+
+            if (!SecurePasswordHasher.Verify(oldPassword, currentUserPassword))
             {
                 this.showErrorService.Show(5000, "Incorrect old password");
                 return;
             }
 
-            var passwordValidator = new PasswordValidator(password, confirmPassword);
-            var result = passwordValidator.Validate();
+            var result = passwordValidator.Validate(password, confirmPassword);
             if (result != String.Empty)
             {
                 this.showErrorService.Show(5000, result);

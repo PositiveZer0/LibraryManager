@@ -21,5 +21,11 @@
             account.Password = SecurePasswordHasher.Hash(passsword);
             await this.user.SaveChangesAsync();
         }
+
+        public string GetCurrentUserPassword(string email)
+        {
+            var password = this.user.All().FirstOrDefault(x => x.Email == email).Password;
+            return password;
+        }
     }
 }

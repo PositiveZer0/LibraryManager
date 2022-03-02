@@ -1,23 +1,20 @@
 ﻿namespace LibraryManager.Forms
 {
+    using System;
+    using System.Windows.Forms;
+
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
     using LibraryManager.Services.Common;
     using LibraryManager.Services.Login;
     using LibraryManager.Services.Login.ValidationCreateAccount;
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Drawing;
-    using System.Text;
-    using System.Windows.Forms;
 
     public partial class ForgottenPassword : Form
     {
         Timer timer;
         EmailValidator emailValidator;
+        PasswordValidator passwordValidator;
         IShowErrorService showErrorService;
         ISixDigitCodeValidator codeValidator;
         IChangePasswordService changePassword;
@@ -29,6 +26,7 @@
         {
             InitializeComponent();
             this.timer = new Timer();
+            this.passwordValidator = new PasswordValidator();
             this.showErrorService = new ShowErrorService(errors_textbox, timer);
             this.user = new EfDeletableEntityRepository<User>(new LibraryManagerContext());
             this.confirmEmail = new EfDeletableEntityRepository<ConfirmEmail>(new LibraryManagerContext());
@@ -78,9 +76,12 @@
             }
             var password = newPassword_box.Text;
             var confirmPassword = confirmNewPsw_box.Text;
-            if (password != confirmPassword)
+            //remove
+
+            var result = passwordValidator.Validate(password, confirmPassword);
+            if (result != String.Empty)
             {
-                this.showErrorService.Show(5000, "Password and confirm password are different");
+                this.showErrorService.Show(5000, result);
                 return;
             }
 

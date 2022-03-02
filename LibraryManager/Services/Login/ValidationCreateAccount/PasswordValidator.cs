@@ -5,19 +5,20 @@
 
     public class PasswordValidator
     {
-        private readonly string password;
-        private readonly string confirmPassword;
+        private string password;
+        private string confirmPassword;
         private readonly StringBuilder result;
 
-        public PasswordValidator(string password, string confirmPassword)
+        public PasswordValidator()
         {
-            this.password = password;
-            this.confirmPassword = confirmPassword;
             this.result = new StringBuilder();
         }
         
-        public string Validate()
+        public string Validate(string password, string confirmPassword)
         {
+            this.password = password;
+            this.confirmPassword= confirmPassword;
+
             this.result.AppendLine(PasswordAndConfrimPasswordShouldMatch());
             this.result.AppendLine(PasswordShouldBeBetweenEightAndSixteenCharacters());
             this.result.AppendLine(PasswordShouldContainAtLeastOneLetter());

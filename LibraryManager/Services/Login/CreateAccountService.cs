@@ -50,8 +50,8 @@
             result.AppendLine(emailValidator.Validate(email));
 
             //password validation
-            var passwordValidator = new PasswordValidator(password, confirmPassword);
-            result.AppendLine(passwordValidator.Validate());
+            var passwordValidator = new PasswordValidator();
+            result.AppendLine(passwordValidator.Validate(password, confirmPassword));
             
             var removeEmptyLinesResult = Regex.Replace(result.ToString(), @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
             return removeEmptyLinesResult.TrimEnd();
