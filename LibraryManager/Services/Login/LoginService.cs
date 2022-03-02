@@ -33,6 +33,7 @@
             CheckUserAsCurrentylLogged(email);
             return string.Empty;
         }
+
         private void CheckUserAsCurrentylLogged(string email)
         {
             var users = this.user.All().Where(x => x.IsLoggedIn == true);

@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.login_wrapper = new System.Windows.Forms.Panel();
+            this.back_pictureBox = new System.Windows.Forms.PictureBox();
             this.errors_textbox = new System.Windows.Forms.TextBox();
             this.confirm_psw_label = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -58,10 +59,10 @@
             this.name_box = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.create_acc_label = new System.Windows.Forms.Label();
-            this.back_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.login_wrapper.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.back_pictureBox)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.confirm_psw_pic)).BeginInit();
             this.panel3.SuspendLayout();
@@ -72,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.password_pic)).BeginInit();
             this.username_wrapper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.back_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,7 +96,7 @@
             this.label3.Location = new System.Drawing.Point(343, 830);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(182, 57);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 8;
             this.label3.Text = "System";
             // 
             // label2
@@ -107,7 +107,7 @@
             this.label2.Location = new System.Drawing.Point(51, 757);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(474, 57);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Library Managment";
             // 
             // label1
@@ -119,7 +119,7 @@
             this.label1.Location = new System.Drawing.Point(131, 682);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(394, 57);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Welcome to the";
             // 
             // pictureBox1
@@ -156,6 +156,17 @@
             this.login_wrapper.Name = "login_wrapper";
             this.login_wrapper.Size = new System.Drawing.Size(1077, 1212);
             this.login_wrapper.TabIndex = 2;
+            // 
+            // back_pictureBox
+            // 
+            this.back_pictureBox.Image = global::LibraryManager.Properties.Resources.back;
+            this.back_pictureBox.Location = new System.Drawing.Point(-2, -2);
+            this.back_pictureBox.Name = "back_pictureBox";
+            this.back_pictureBox.Size = new System.Drawing.Size(118, 67);
+            this.back_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.back_pictureBox.TabIndex = 27;
+            this.back_pictureBox.TabStop = false;
+            this.back_pictureBox.Click += new System.EventHandler(this.back_pictureBox_Click);
             // 
             // errors_textbox
             // 
@@ -200,7 +211,7 @@
             this.confirm_psw_box.Location = new System.Drawing.Point(119, 25);
             this.confirm_psw_box.Name = "confirm_psw_box";
             this.confirm_psw_box.Size = new System.Drawing.Size(946, 58);
-            this.confirm_psw_box.TabIndex = 7;
+            this.confirm_psw_box.TabIndex = 1;
             this.confirm_psw_box.UseSystemPasswordChar = true;
             // 
             // confirm_psw_pic
@@ -262,7 +273,7 @@
             this.panel3.Location = new System.Drawing.Point(5, 439);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1070, 86);
-            this.panel3.TabIndex = 8;
+            this.panel3.TabIndex = 15;
             // 
             // email_box
             // 
@@ -273,7 +284,7 @@
             this.email_box.Location = new System.Drawing.Point(118, 25);
             this.email_box.Name = "email_box";
             this.email_box.Size = new System.Drawing.Size(952, 58);
-            this.email_box.TabIndex = 6;
+            this.email_box.TabIndex = 3;
             // 
             // pictureBox4
             // 
@@ -293,7 +304,7 @@
             this.panel2.Location = new System.Drawing.Point(5, 264);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1070, 86);
-            this.panel2.TabIndex = 7;
+            this.panel2.TabIndex = 16;
             // 
             // surname_box
             // 
@@ -304,7 +315,7 @@
             this.surname_box.Location = new System.Drawing.Point(118, 25);
             this.surname_box.Name = "surname_box";
             this.surname_box.Size = new System.Drawing.Size(947, 58);
-            this.surname_box.TabIndex = 6;
+            this.surname_box.TabIndex = 4;
             // 
             // pictureBox3
             // 
@@ -325,7 +336,7 @@
             this.create_acc_btn.Location = new System.Drawing.Point(378, 1063);
             this.create_acc_btn.Name = "create_acc_btn";
             this.create_acc_btn.Size = new System.Drawing.Size(319, 119);
-            this.create_acc_btn.TabIndex = 5;
+            this.create_acc_btn.TabIndex = 9;
             this.create_acc_btn.Text = "Create Account";
             this.create_acc_btn.UseVisualStyleBackColor = false;
             this.create_acc_btn.Click += new System.EventHandler(this.create_acc_btn_Click);
@@ -338,7 +349,7 @@
             this.password_wrapper.Location = new System.Drawing.Point(5, 602);
             this.password_wrapper.Name = "password_wrapper";
             this.password_wrapper.Size = new System.Drawing.Size(1070, 86);
-            this.password_wrapper.TabIndex = 4;
+            this.password_wrapper.TabIndex = 14;
             // 
             // password_box
             // 
@@ -349,7 +360,7 @@
             this.password_box.Location = new System.Drawing.Point(119, 25);
             this.password_box.Name = "password_box";
             this.password_box.Size = new System.Drawing.Size(948, 58);
-            this.password_box.TabIndex = 7;
+            this.password_box.TabIndex = 2;
             this.password_box.UseSystemPasswordChar = true;
             // 
             // password_pic
@@ -371,7 +382,7 @@
             this.username_wrapper.Location = new System.Drawing.Point(5, 106);
             this.username_wrapper.Name = "username_wrapper";
             this.username_wrapper.Size = new System.Drawing.Size(1070, 86);
-            this.username_wrapper.TabIndex = 3;
+            this.username_wrapper.TabIndex = 17;
             // 
             // name_box
             // 
@@ -382,7 +393,7 @@
             this.name_box.Location = new System.Drawing.Point(118, 25);
             this.name_box.Name = "name_box";
             this.name_box.Size = new System.Drawing.Size(949, 58);
-            this.name_box.TabIndex = 6;
+            this.name_box.TabIndex = 5;
             // 
             // pictureBox2
             // 
@@ -402,19 +413,8 @@
             this.create_acc_label.Location = new System.Drawing.Point(260, 7);
             this.create_acc_label.Name = "create_acc_label";
             this.create_acc_label.Size = new System.Drawing.Size(508, 74);
-            this.create_acc_label.TabIndex = 2;
+            this.create_acc_label.TabIndex = 8;
             this.create_acc_label.Text = "Create Account";
-            // 
-            // back_pictureBox
-            // 
-            this.back_pictureBox.Image = global::LibraryManager.Properties.Resources.back;
-            this.back_pictureBox.Location = new System.Drawing.Point(-2, -2);
-            this.back_pictureBox.Name = "back_pictureBox";
-            this.back_pictureBox.Size = new System.Drawing.Size(118, 67);
-            this.back_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.back_pictureBox.TabIndex = 27;
-            this.back_pictureBox.TabStop = false;
-            this.back_pictureBox.Click += new System.EventHandler(this.back_pictureBox_Click);
             // 
             // CreateAccount
             // 
@@ -430,6 +430,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.login_wrapper.ResumeLayout(false);
             this.login_wrapper.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.back_pictureBox)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.confirm_psw_pic)).EndInit();
@@ -445,7 +446,6 @@
             this.username_wrapper.ResumeLayout(false);
             this.username_wrapper.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.back_pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

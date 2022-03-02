@@ -5,6 +5,7 @@
     using LibraryManager.Database.Repositories;
     using LibraryManager.Forms.Admin;
     using LibraryManager.Services.Client;
+    using LibraryManager.Services.Common;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -19,6 +20,7 @@
         IBookService bookService;
         LibraryManagerContext db;
         private IDeletableEntityRepository<BorrowedBook> borrowedBook;
+        IChangeFormService changeFormService;
 
         public Profile()
         {
@@ -26,6 +28,8 @@
             this.db = new LibraryManagerContext(); 
             this.borrowedBook = new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext());
             this.bookService = new BookService(db, borrowedBook);
+            this.changeFormService = new ChangeFormService();
+            
             //todo: refactor 
             var currentUser = this.db.Users.FirstOrDefault(x => x.IsLoggedIn == true);
             name_box.Text = currentUser.Name;
@@ -44,5 +48,9 @@
             currentBook.Show(this);
         }
 
+        private void logOut_btn_Click(object sender, EventArgs e)
+        {
+            this.changeFormService.Change(this.ParentForm, new Form1());
+        }
     }
 }

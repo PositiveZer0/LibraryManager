@@ -156,7 +156,7 @@
             this.email_box.Location = new System.Drawing.Point(115, 25);
             this.email_box.Name = "email_box";
             this.email_box.Size = new System.Drawing.Size(952, 58);
-            this.email_box.TabIndex = 6;
+            this.email_box.TabIndex = 0;
             // 
             // pictureBox4
             // 
@@ -198,7 +198,7 @@
             this.newPassword_box.Location = new System.Drawing.Point(119, 25);
             this.newPassword_box.Name = "newPassword_box";
             this.newPassword_box.Size = new System.Drawing.Size(948, 58);
-            this.newPassword_box.TabIndex = 7;
+            this.newPassword_box.TabIndex = 2;
             this.newPassword_box.UseSystemPasswordChar = true;
             // 
             // password_pic
@@ -242,7 +242,7 @@
             this.confirmNewPsw_box.Location = new System.Drawing.Point(119, 25);
             this.confirmNewPsw_box.Name = "confirmNewPsw_box";
             this.confirmNewPsw_box.Size = new System.Drawing.Size(946, 58);
-            this.confirmNewPsw_box.TabIndex = 7;
+            this.confirmNewPsw_box.TabIndex = 3;
             this.confirmNewPsw_box.UseSystemPasswordChar = true;
             // 
             // confirm_psw_pic
@@ -290,7 +290,7 @@
             this.code_box.Location = new System.Drawing.Point(118, 25);
             this.code_box.Name = "code_box";
             this.code_box.Size = new System.Drawing.Size(952, 58);
-            this.code_box.TabIndex = 6;
+            this.code_box.TabIndex = 1;
             // 
             // pictureBox2
             // 

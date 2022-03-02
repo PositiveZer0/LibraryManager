@@ -42,23 +42,6 @@
         }
 
 
-        private void username_box_Click(object sender, EventArgs e)
-        {
-            username_box.BackColor = SystemColors.ButtonHighlight;
-            username_wrapper.BackColor = SystemColors.ButtonHighlight;
-            password_box.BackColor = SystemColors.Control;
-            password_wrapper.BackColor = SystemColors.Control;
-        }
-
-
-        private void password_box_Click(object sender, EventArgs e)
-        {
-            username_box.BackColor = SystemColors.Control;
-            username_wrapper.BackColor = SystemColors.Control;
-            password_box.BackColor = SystemColors.ButtonHighlight;
-            password_wrapper.BackColor = SystemColors.ButtonHighlight;
-        }
-
         private void password_pic_Click(object sender, EventArgs e)
         {
             password_box.UseSystemPasswordChar = !password_box.UseSystemPasswordChar;
@@ -90,5 +73,12 @@
             this.changeFormService.Change(this, new Main());
         }
 
+        private void password_box_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                login_btn_Click(sender, e);
+            }
+        }
     }
 }

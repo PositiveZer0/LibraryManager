@@ -144,7 +144,7 @@
             this.email_box.Name = "email_box";
             this.email_box.ReadOnly = true;
             this.email_box.Size = new System.Drawing.Size(952, 58);
-            this.email_box.TabIndex = 6;
+            this.email_box.TabIndex = 0;
             // 
             // pictureBox4
             // 
@@ -195,7 +195,7 @@
             this.code_box.Location = new System.Drawing.Point(115, 25);
             this.code_box.Name = "code_box";
             this.code_box.Size = new System.Drawing.Size(952, 58);
-            this.code_box.TabIndex = 6;
+            this.code_box.TabIndex = 1;
             // 
             // pictureBox2
             // 

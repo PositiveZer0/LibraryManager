@@ -192,7 +192,7 @@
             // 
             // password_wrapper
             // 
-            this.password_wrapper.BackColor = System.Drawing.SystemColors.Control;
+            this.password_wrapper.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.password_wrapper.Controls.Add(this.password_box);
             this.password_wrapper.Controls.Add(this.password_pic);
             this.password_wrapper.Location = new System.Drawing.Point(4, 570);
@@ -202,16 +202,16 @@
             // 
             // password_box
             // 
-            this.password_box.BackColor = System.Drawing.SystemColors.Control;
+            this.password_box.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.password_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.password_box.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.password_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
             this.password_box.Location = new System.Drawing.Point(118, 25);
             this.password_box.Name = "password_box";
             this.password_box.Size = new System.Drawing.Size(953, 58);
-            this.password_box.TabIndex = 7;
+            this.password_box.TabIndex = 1;
             this.password_box.UseSystemPasswordChar = true;
-            this.password_box.Click += new System.EventHandler(this.password_box_Click);
+            this.password_box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.password_box_KeyPress);
             // 
             // password_pic
             // 
@@ -243,8 +243,7 @@
             this.username_box.Location = new System.Drawing.Point(118, 25);
             this.username_box.Name = "username_box";
             this.username_box.Size = new System.Drawing.Size(953, 58);
-            this.username_box.TabIndex = 6;
-            this.username_box.Click += new System.EventHandler(this.username_box_Click);
+            this.username_box.TabIndex = 0;
             // 
             // pictureBox2
             // 

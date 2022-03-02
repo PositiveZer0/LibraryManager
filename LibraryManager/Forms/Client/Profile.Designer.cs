@@ -45,6 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.editPhoto_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.logOut_btn = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
@@ -116,8 +117,9 @@
             this.email_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
             this.email_box.Location = new System.Drawing.Point(113, 25);
             this.email_box.Name = "email_box";
+            this.email_box.ReadOnly = true;
             this.email_box.Size = new System.Drawing.Size(921, 45);
-            this.email_box.TabIndex = 6;
+            this.email_box.TabIndex = 2;
             // 
             // pictureBox4
             // 
@@ -147,8 +149,9 @@
             this.surname_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
             this.surname_box.Location = new System.Drawing.Point(113, 25);
             this.surname_box.Name = "surname_box";
+            this.surname_box.ReadOnly = true;
             this.surname_box.Size = new System.Drawing.Size(921, 58);
-            this.surname_box.TabIndex = 7;
+            this.surname_box.TabIndex = 1;
             // 
             // pictureBox3
             // 
@@ -178,8 +181,9 @@
             this.name_box.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
             this.name_box.Location = new System.Drawing.Point(118, 28);
             this.name_box.Name = "name_box";
+            this.name_box.ReadOnly = true;
             this.name_box.Size = new System.Drawing.Size(919, 58);
-            this.name_box.TabIndex = 6;
+            this.name_box.TabIndex = 0;
             // 
             // pictureBox2
             // 
@@ -230,11 +234,27 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // logOut_btn
+            // 
+            this.logOut_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
+            this.logOut_btn.FlatAppearance.BorderSize = 0;
+            this.logOut_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOut_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.logOut_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.logOut_btn.Location = new System.Drawing.Point(70, 895);
+            this.logOut_btn.Name = "logOut_btn";
+            this.logOut_btn.Size = new System.Drawing.Size(306, 126);
+            this.logOut_btn.TabIndex = 23;
+            this.logOut_btn.Text = "Log Out";
+            this.logOut_btn.UseVisualStyleBackColor = false;
+            this.logOut_btn.Click += new System.EventHandler(this.logOut_btn_Click);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1560, 1162);
+            this.Controls.Add(this.logOut_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.editPhoto_btn);
             this.Controls.Add(this.pictureBox1);
@@ -280,5 +300,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button editPhoto_btn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button logOut_btn;
     }
 }
