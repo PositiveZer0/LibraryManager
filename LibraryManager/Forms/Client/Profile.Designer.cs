@@ -68,6 +68,7 @@
             this.changePsw_btn.TabIndex = 12;
             this.changePsw_btn.Text = "Change Password";
             this.changePsw_btn.UseVisualStyleBackColor = false;
+            this.changePsw_btn.Click += new System.EventHandler(this.changePsw_btn_Click);
             // 
             // email_label
             // 

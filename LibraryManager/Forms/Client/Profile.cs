@@ -52,5 +52,11 @@
         {
             this.changeFormService.Change(this.ParentForm, new Form1());
         }
+
+        private void changePsw_btn_Click(object sender, EventArgs e)
+        {
+            var changePasswordUser = new ChangePassword(email_box.Text);
+            changePasswordUser.Show(this);
+        }
     }
 }

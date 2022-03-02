@@ -22,7 +22,7 @@
             this.result.AppendLine(PasswordShouldBeBetweenEightAndSixteenCharacters());
             this.result.AppendLine(PasswordShouldContainAtLeastOneLetter());
 
-            return this.result.ToString();
+            return this.result.ToString().TrimEnd();
         }
 
         private string PasswordAndConfrimPasswordShouldMatch()

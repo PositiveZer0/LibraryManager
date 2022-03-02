@@ -114,9 +114,7 @@
             books_dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 12);
             books_dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 125, 185);
             books_dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(240, 240, 240);
-
-            
-
         }
+
     }
 }
