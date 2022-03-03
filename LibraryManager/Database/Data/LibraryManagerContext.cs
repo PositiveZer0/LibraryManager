@@ -86,6 +86,8 @@
             {
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
             }
+
+            builder.Seed();
         }
 
         private static void SetIsDeletedQueryFilter<T>(ModelBuilder builder)

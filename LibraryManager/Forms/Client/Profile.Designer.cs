@@ -44,7 +44,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.profile_pic = new System.Windows.Forms.PictureBox();
             this.editPhoto_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.logOut_btn = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -62,9 +61,9 @@
             this.changePsw_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.changePsw_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.changePsw_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.changePsw_btn.Location = new System.Drawing.Point(631, 814);
+            this.changePsw_btn.Location = new System.Drawing.Point(30, 762);
             this.changePsw_btn.Name = "changePsw_btn";
-            this.changePsw_btn.Size = new System.Drawing.Size(306, 126);
+            this.changePsw_btn.Size = new System.Drawing.Size(291, 126);
             this.changePsw_btn.TabIndex = 12;
             this.changePsw_btn.Text = "Change Password";
             this.changePsw_btn.UseVisualStyleBackColor = false;
@@ -221,21 +220,6 @@
             this.editPhoto_btn.UseVisualStyleBackColor = false;
             this.editPhoto_btn.Click += new System.EventHandler(this.editPhoto_btn_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(1104, 848);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(306, 126);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "add book test";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // logOut_btn
             // 
             this.logOut_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
@@ -243,7 +227,7 @@
             this.logOut_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logOut_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.logOut_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.logOut_btn.Location = new System.Drawing.Point(70, 895);
+            this.logOut_btn.Location = new System.Drawing.Point(1197, 1009);
             this.logOut_btn.Name = "logOut_btn";
             this.logOut_btn.Size = new System.Drawing.Size(306, 126);
             this.logOut_btn.TabIndex = 23;
@@ -257,7 +241,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1560, 1162);
             this.Controls.Add(this.logOut_btn);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.editPhoto_btn);
             this.Controls.Add(this.profile_pic);
             this.Controls.Add(this.email_label);
@@ -301,7 +284,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox profile_pic;
         private System.Windows.Forms.Button editPhoto_btn;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button logOut_btn;
     }
 }

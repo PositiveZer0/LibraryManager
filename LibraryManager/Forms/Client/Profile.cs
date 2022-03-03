@@ -22,7 +22,6 @@
     {
         Image bookImage;
         byte[] bookImageInBytes;
-        IBookService bookService;
         LibraryManagerContext db;
         private IDeletableEntityRepository<BorrowedBook> borrowedBook;
         IChangeFormService changeFormService;
@@ -32,7 +31,6 @@
             InitializeComponent();
             this.db = new LibraryManagerContext(); 
             this.borrowedBook = new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext());
-            this.bookService = new BookService(db, borrowedBook);
             this.changeFormService = new ChangeFormService();
             
             //todo: refactor 
@@ -41,17 +39,15 @@
             surname_box.Text = currentUser.Surname;
             email_box.Text = currentUser.Email;
 
-            Bitmap bmp;
-            using (var ms = new MemoryStream(currentUser.UserImage.Image))
+            if (currentUser.UserImage != null)
             {
-                bmp = new Bitmap(ms);
+                Bitmap bmp;
+                using (var ms = new MemoryStream(currentUser.UserImage.Image))
+                {
+                    bmp = new Bitmap(ms);
+                }
+                profile_pic.Image = bmp;
             }
-            profile_pic.Image = bmp;
-        }
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            var currentBook = new AddBook();
-            currentBook.Show(this);
         }
 
         private void logOut_btn_Click(object sender, EventArgs e)
@@ -111,7 +107,7 @@
                 }
             }
         }
-        public static byte[] ReadFully(Stream input)
+        private static byte[] ReadFully(Stream input)
         {
             input.Position = 0;
             using (MemoryStream ms = new MemoryStream())
