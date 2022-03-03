@@ -8,8 +8,7 @@
             string surname, 
             string email, 
             string password, 
-            string role,
-            bool verifyEmail);
+            string role);
 
         string ValidateAccount(string name,
             string surname,

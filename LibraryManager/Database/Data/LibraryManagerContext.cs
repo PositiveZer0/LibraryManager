@@ -37,6 +37,8 @@
 
         public virtual DbSet<BookImage> BookImage { get; set; }
 
+        public virtual DbSet<UserImage> UserImage { get; set; }
+
 
         public override int SaveChanges() => this.SaveChanges(true);
 

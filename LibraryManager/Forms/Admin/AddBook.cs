@@ -1,27 +1,24 @@
 ﻿namespace LibraryManager.Forms.Admin
 {
+    using System;
+    using System.Drawing;
+    using System.IO;
+    using System.Threading;
+    using System.Windows.Forms;
+
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
     using LibraryManager.Services.Client;
     using LibraryManager.ViewModels;
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Drawing;
-    using System.IO;
-    using System.Text;
-    using System.Threading;
-    using System.Windows.Forms;
 
     public partial class AddBook : Form
     {
         IBookService bookService;
         LibraryManagerContext db;
         IDeletableEntityRepository<BorrowedBook> borrowedBooks;
-        Image imageForBook;
-        byte[] imageFromByte;
+        Image bookImage;
+        byte[] bookImageInBytes;
 
         public AddBook()
         {
@@ -37,7 +34,7 @@
             var authorName = authorName_textBox.Text;
             var genre = genre_textBox.Text;
             var description = description_textBox.Text;
-            var image = this.imageFromByte;
+            var image = this.bookImageInBytes;
             var book = new BookViewModel()
             {
                 Title = title,
@@ -71,12 +68,12 @@
                     using (StreamReader reader = new StreamReader(fileStream))
                     {
                         fileContent = reader.ReadToEnd();
-                        this.imageForBook = Image.FromStream(fileStream);
+                        this.bookImage = Image.FromStream(fileStream);
                         arr = ReadFully(fileStream);
                     }
 
-                    book_pictureBox.Image = this.imageForBook;
-                    this.imageFromByte = arr;
+                    book_pictureBox.Image = this.bookImage;
+                    this.bookImageInBytes = arr;
                 }
             }
         }
@@ -86,8 +83,6 @@
             newThread.SetApartmentState(ApartmentState.STA);
             newThread.Start();
         }
-
-       
 
         public static byte[] ReadFully(Stream input)
         {

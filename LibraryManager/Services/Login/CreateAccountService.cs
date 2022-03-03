@@ -17,7 +17,7 @@
             this.user = user;
         }
 
-        public async Task CreateAccount(string name, string surname, string email, string password, string role, bool verifyEmail)
+        public async Task CreateAccount(string name, string surname, string email, string password, string role)
         {
             var account = new User
             {
@@ -26,7 +26,6 @@
                 Email = email,
                 Password = SecurePasswordHasher.Hash(password),
                 Role = role,
-                IsEmailVerified = verifyEmail,
             };
             await this.user.AddAsync(account);
             await this.user.SaveChangesAsync();

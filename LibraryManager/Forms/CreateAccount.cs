@@ -48,7 +48,6 @@
             var password = password_box.Text;
             var confirmPassword = confirm_psw_box.Text;
             var role = "Student";
-            var isEmailVerified = false;
 
             var errors = this.createAccountService.ValidateAccount(name, surname, email, password, confirmPassword);
             if (errors != string.Empty)
@@ -60,7 +59,7 @@
                 return;
             }
             //todo: create acc only after verification and make back button auto fill last filled acc
-            await this.createAccountService.CreateAccount(name, surname, email, password, role, isEmailVerified);
+            await this.createAccountService.CreateAccount(name, surname, email, password, role);
             this.changeFormService.Change(this, new VerifyEmail(email_box.Text));
         }
 

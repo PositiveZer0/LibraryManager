@@ -23,9 +23,11 @@
 
         public string Role { get; set; }
 
-        public bool IsEmailVerified { get; set; }
-
         public bool IsLoggedIn { get; set; }
+
+        public int? UserImageId { get; set; }
+
+        public UserImage UserImage { get; set; }
 
         public ICollection<BorrowedBook> BorrowedBooks{ get; set; }
     }

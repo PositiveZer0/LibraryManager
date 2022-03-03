@@ -42,7 +42,7 @@
             this.username_wrapper = new System.Windows.Forms.Panel();
             this.name_box = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.profile_pic = new System.Windows.Forms.PictureBox();
             this.editPhoto_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.logOut_btn = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.username_wrapper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profile_pic)).BeginInit();
             this.SuspendLayout();
             // 
             // changePsw_btn
@@ -196,15 +196,15 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // profile_pic
             // 
-            this.pictureBox1.Image = global::LibraryManager.Properties.Resources.defaultProfilePIcture2;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 106);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(291, 267);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
+            this.profile_pic.Image = global::LibraryManager.Properties.Resources.defaultProfilePIcture2;
+            this.profile_pic.Location = new System.Drawing.Point(30, 106);
+            this.profile_pic.Name = "profile_pic";
+            this.profile_pic.Size = new System.Drawing.Size(291, 267);
+            this.profile_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.profile_pic.TabIndex = 20;
+            this.profile_pic.TabStop = false;
             // 
             // editPhoto_btn
             // 
@@ -219,6 +219,7 @@
             this.editPhoto_btn.TabIndex = 21;
             this.editPhoto_btn.Text = "Edit Photo";
             this.editPhoto_btn.UseVisualStyleBackColor = false;
+            this.editPhoto_btn.Click += new System.EventHandler(this.editPhoto_btn_Click);
             // 
             // button1
             // 
@@ -258,7 +259,7 @@
             this.Controls.Add(this.logOut_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.editPhoto_btn);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.profile_pic);
             this.Controls.Add(this.email_label);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -278,7 +279,7 @@
             this.username_wrapper.ResumeLayout(false);
             this.username_wrapper.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profile_pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,7 +299,7 @@
         private System.Windows.Forms.Panel username_wrapper;
         private System.Windows.Forms.TextBox name_box;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox profile_pic;
         private System.Windows.Forms.Button editPhoto_btn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button logOut_btn;

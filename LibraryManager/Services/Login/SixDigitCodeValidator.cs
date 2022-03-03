@@ -64,7 +64,6 @@
                 x.UserId,
                 x.User,
             }).Where(x => x.User.Email == email).FirstOrDefault();
-            client.User.IsEmailVerified = true;
 
             var deletedConfirmEmail = GetClient(email);
             this.confirmEmail.Delete(deletedConfirmEmail);
