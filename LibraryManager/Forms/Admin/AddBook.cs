@@ -44,6 +44,9 @@
                 Image = image,
             };
             await this.bookService.AddBookAsync(book);
+
+            MessageBox.Show("Book added successfully", "Book add");
+            this.Close();
         }
 
         private void showOpenFileDialog()

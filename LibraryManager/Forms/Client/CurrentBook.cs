@@ -63,12 +63,13 @@
             {
                 await this.bookService.BorrowBook(bookId);
                 MessageBox.Show("Book borrowed successfully. You can get your book from the library :)");
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                this.Close();
             }
         }
-
     }
 }

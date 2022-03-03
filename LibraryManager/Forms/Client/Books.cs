@@ -1,14 +1,15 @@
 ﻿namespace LibraryManager.Forms.Client
 {
+    using System;
+    using System.ComponentModel;
+    using System.Drawing;
+    using System.Windows.Forms;
+
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
     using LibraryManager.Services.Client;
     using LibraryManager.ViewModels;
-    using System;
-    using System.ComponentModel;
-    using System.Drawing;
-    using System.Windows.Forms;
 
     public partial class Books : Form
     {
@@ -29,15 +30,6 @@
 
         private void Books_Load(object sender, EventArgs e)
         {
-            //var list = new BindingList<Book>();
-            //var book1 = new Book
-            //{
-            //    AuthorName = "filip",
-            //    Genre = "Drama",
-            //    Quantity = 30,
-            //    Description = "Really good book",
-            //    Title = "Romeo and Juliet"
-            //};
             var list = new BindingList<BookViewModel>(this.bookService.GetAllBooks());
 
             if (this.method == "Borrowed books")
@@ -59,13 +51,6 @@
             this.books_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.books_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.books_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //books_dataGridView.Columns["IsDeleted"].Visible = false;
-            //books_dataGridView.Columns["DeletedOn"].Visible = false;
-            //books_dataGridView.Columns["Id"].Visible = false;
-            //books_dataGridView.Columns["CreatedOn"].Visible = false;
-            //books_dataGridView.Columns["ModifiedOn"].Visible = false;
-            //books_dataGridView.Columns["BorrowedBooks"].Visible = false;
-
         }
 
         private void search_textBox_TextChanged(object sender, EventArgs e)
@@ -101,7 +86,6 @@
 
         void StyleDatagridview()
         {
-
             books_dataGridView.BorderStyle = BorderStyle.None;
             books_dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             books_dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -116,5 +100,9 @@
             books_dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(240, 240, 240);
         }
 
+        private void addBook_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

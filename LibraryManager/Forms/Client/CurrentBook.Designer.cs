@@ -94,6 +94,7 @@
             this.borrow_btn.TabIndex = 11;
             this.borrow_btn.Text = "Borrow book";
             this.borrow_btn.UseVisualStyleBackColor = false;
+            this.borrow_btn.Click += new System.EventHandler(this.borrow_btn_Click);
             // 
             // description_textBox
             // 
