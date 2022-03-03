@@ -8,6 +8,7 @@
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
+    using LibraryManager.Forms.Admin;
     using LibraryManager.Services.Client;
     using LibraryManager.ViewModels;
 
@@ -102,7 +103,8 @@
 
         private void addBook_btn_Click(object sender, EventArgs e)
         {
-
+            var currentBook = new AddBook();
+            currentBook.Show(this);
         }
     }
 }

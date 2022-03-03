@@ -87,7 +87,7 @@
             newThread.Start();
         }
 
-        public static byte[] ReadFully(Stream input)
+        private static byte[] ReadFully(Stream input)
         {
             input.Position = 0;
             using (MemoryStream ms = new MemoryStream())

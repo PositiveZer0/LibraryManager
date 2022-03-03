@@ -42,7 +42,7 @@
                 Genre = book.Genre,
                 Quantity = 1,
                 Description = book.Description,
-                BookImageId = image.Id,
+                BookImageId = image.Image != null ? (int?)image.Id : null,
             };
 
             this.db.Books.Add(bookToAdd);

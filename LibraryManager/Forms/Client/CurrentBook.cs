@@ -44,12 +44,16 @@
 
             var currentBook = this.db.Books.Include(x => x.BookImage).FirstOrDefault(x => x.Title == title_label.Text);
             
-            Bitmap bmp;
-            using (var ms = new MemoryStream(currentBook.BookImage.Image))
+            if (currentBook.BookImageId != null)
             {
-                bmp = new Bitmap(ms);
+                Bitmap bmp;
+                using (var ms = new MemoryStream(currentBook.BookImage.Image))
+                {
+                    bmp = new Bitmap(ms);
+                }
+                pictureBox1.Image = bmp;
             }
-            pictureBox1.Image = bmp;
+            
 
             if (title_label.Text.Length <= 25)
             {

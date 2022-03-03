@@ -21,23 +21,15 @@ namespace LibraryManager
         static async Task Main()
         {
             ////Ensure that database is created
-            /////work
             var db = new LibraryManagerContext();
             //db.Database.EnsureDeleted();
             db.Database.EnsureCreated();
-            //var book = new Book() { Author = "Steven", Name = "MyFirstBook", Year = 1999 };
-            //db.Books.Add(book);
-            //db.SaveChanges();
-            var sendGrid = new SendGridEmailSender(ConfigurationConstants.SENDGRID_APIKEY);
 
             var bookService = new BookService(new LibraryManagerContext(), new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext()));
             await bookService.SendEmailBorrowedBooks();
 
             //start automapper
             AutoMapperConfig.RegisterMappings(Assembly.GetExecutingAssembly());
-            //sender, sender name, receiver
-            //await sendGrid.SendEmailAsync("azsumemi@gmail.com", "emo", "ghostinthewires@abv.bg", "test", "Second email send");
-            Console.WriteLine(ConfigurationConstants.SERVER_NAME);
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
