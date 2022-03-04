@@ -43,7 +43,16 @@
                 Genre = genre,
                 Image = image,
             };
-            await this.bookService.AddBookAsync(book);
+
+            try
+            {
+                await this.bookService.AddBookAsync(book);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+                return;
+            }
 
             MessageBox.Show("Book added successfully", "Book add");
             this.Close();

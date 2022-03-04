@@ -34,7 +34,28 @@
                 this.db.BookImage.Add(image);
                 await this.db.SaveChangesAsync();
             }
-           
+
+            //todo: refactor in method
+            if (book.Title.Length < 3)
+            {
+                throw new Exception("Title should be at least 3 characters");
+            }
+
+            if (book.AuthorName.Length < 3)
+            {
+                throw new Exception("Author name should be at least 3 characters");
+            }
+
+            if (book.Genre.Length < 3)
+            {
+                throw new Exception("Genre should be at least 3 characters");
+            }
+
+            if (book.Description.Length < 10)
+            {
+                throw new Exception("Genre should be at least 10 characters");
+            }
+
             var bookToAdd = new Book()
             {
                 Title = book.Title,
