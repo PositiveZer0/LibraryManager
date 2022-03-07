@@ -23,6 +23,7 @@ namespace LibraryManager
             ////Ensure that database is created
             var db = new LibraryManagerContext();
             //db.Database.EnsureDeleted();
+            //7th
             db.Database.EnsureCreated();
 
             var bookService = new BookService(new LibraryManagerContext(), new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext()));
