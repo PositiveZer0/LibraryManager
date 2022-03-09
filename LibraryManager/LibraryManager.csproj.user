@@ -7,6 +7,9 @@
     <Compile Update="Forms\Admin\AddBook.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Admin\UpdateBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Client\Books.cs">
       <SubType>Form</SubType>
     </Compile>

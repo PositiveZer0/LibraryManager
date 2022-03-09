@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
+    using LibraryManager.Database.Models;
     using LibraryManager.ViewModels;
 
     public interface IBookService
@@ -15,7 +15,6 @@
 
         List<BookViewModel> GetAllAvailableBooks();
 
-
         List<BorrowedBookViewModel> GetAllBorrowedBooks();
 
         List<BookViewModel> SearchBooks(string word);
@@ -23,6 +22,7 @@
         public Task SendEmailBorrowedBooks();
 
         int GetBookIdByTitle(string title);
+
 
     }
 }

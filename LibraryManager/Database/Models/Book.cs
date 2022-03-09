@@ -1,8 +1,10 @@
 ﻿namespace LibraryManager.Database.Models
 {
+    using System;
     using System.Collections.Generic;
-
+    using LibraryManager.Automapper;
     using LibraryManager.Database.Repositories.Models;
+    using LibraryManager.ViewModels;
 
     public class Book : BaseDeletableModel<int>
     {
@@ -22,6 +24,11 @@
         public string Description { get; set; }
 
         public ICollection<BorrowedBook> BorrowedBooks { get; set; }
+
+        internal object FirstOrDefault()
+        {
+            throw new NotImplementedException();
+        }
 
         public int? BookImageId { get; set; }
 

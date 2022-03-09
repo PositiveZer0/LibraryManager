@@ -158,17 +158,18 @@
             await this.db.SaveChangesAsync();
         }
 
+       
+
+        public int GetBookIdByTitle(string title)
+        {
+            return this.db.Books.FirstOrDefault(x => x.Title == title).Id;
+        }
 
         private bool IsBookIdReal(int bookId)
         {
             var book = this.db.Books.FirstOrDefault(x => x.Id == bookId);
             return book != null;
         }
-        public int GetBookIdByTitle(string title)
-        {
-            return this.db.Books.FirstOrDefault(x => x.Title == title).Id;
-        }
-
         private bool CheckIfBookIsAvailable(int bookId)
         {
             var book = this.db.Books.FirstOrDefault(x => x.Id == bookId);

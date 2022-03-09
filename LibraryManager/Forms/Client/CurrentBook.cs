@@ -3,7 +3,9 @@
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
+    using LibraryManager.Forms.Admin;
     using LibraryManager.Services.Client;
+    using LibraryManager.Services.Common;
     using LibraryManager.ViewModels;
     using Microsoft.EntityFrameworkCore;
     using System;
@@ -22,6 +24,7 @@
     {
         BookViewModel book;
         IBookService bookService;
+        IChangeFormService changeFormService;
         private LibraryManagerContext db;
         IDeletableEntityRepository<BorrowedBook> borrowedBooks;
 
@@ -31,6 +34,7 @@
             this.book = book;
             this.borrowedBooks = new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext());
             this.bookService = new BookService(new LibraryManagerContext(), this.borrowedBooks);
+            this.changeFormService = new ChangeFormService();
             //refactor
             this.db = new LibraryManagerContext();
         }
@@ -74,6 +78,12 @@
                 MessageBox.Show(ex.Message);
                 this.Close();
             }
+        }
+
+        private void updateBook_btn_Click(object sender, EventArgs e)
+        {
+            var bookId = this.bookService.GetBookIdByTitle(title_label.Text);
+            this.changeFormService.Change(this, new UpdateBook(bookId));
         }
     }
 }

@@ -34,6 +34,7 @@
             this.genre_label = new System.Windows.Forms.Label();
             this.borrow_btn = new System.Windows.Forms.Button();
             this.description_textBox = new System.Windows.Forms.TextBox();
+            this.updateBook_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,11 +107,27 @@
             this.description_textBox.Size = new System.Drawing.Size(743, 345);
             this.description_textBox.TabIndex = 12;
             // 
+            // updateBook_btn
+            // 
+            this.updateBook_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
+            this.updateBook_btn.FlatAppearance.BorderSize = 0;
+            this.updateBook_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBook_btn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.updateBook_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.updateBook_btn.Location = new System.Drawing.Point(166, 848);
+            this.updateBook_btn.Name = "updateBook_btn";
+            this.updateBook_btn.Size = new System.Drawing.Size(258, 80);
+            this.updateBook_btn.TabIndex = 13;
+            this.updateBook_btn.Text = "Update book";
+            this.updateBook_btn.UseVisualStyleBackColor = false;
+            this.updateBook_btn.Click += new System.EventHandler(this.updateBook_btn_Click);
+            // 
             // CurrentBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1360, 940);
+            this.Controls.Add(this.updateBook_btn);
             this.Controls.Add(this.description_textBox);
             this.Controls.Add(this.borrow_btn);
             this.Controls.Add(this.genre_label);
@@ -133,5 +150,6 @@
         private System.Windows.Forms.Label genre_label;
         private System.Windows.Forms.Button borrow_btn;
         private System.Windows.Forms.TextBox description_textBox;
+        private System.Windows.Forms.Button updateBook_btn;
     }
 }
