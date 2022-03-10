@@ -10,9 +10,9 @@
 
     public class SixDigitCodeValidator : ISixDigitCodeValidator
     {
+        private Random code;
         private IDeletableEntityRepository<ConfirmEmail> confirmEmail;
         private readonly IDeletableEntityRepository<User> user;
-        Random code;
 
         public SixDigitCodeValidator(IDeletableEntityRepository<ConfirmEmail> confirmEmail,
             IDeletableEntityRepository<User> user)

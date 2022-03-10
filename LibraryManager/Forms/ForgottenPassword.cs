@@ -12,13 +12,13 @@
 
     public partial class ForgottenPassword : Form
     {
-        Timer timer;
-        EmailValidator emailValidator;
-        PasswordValidator passwordValidator;
-        IShowErrorService showErrorService;
-        ISixDigitCodeValidator codeValidator;
-        IChangePasswordService changePassword;
-        IChangeFormService changeFormService;
+        private Timer timer;
+        private EmailValidator emailValidator;
+        private PasswordValidator passwordValidator;
+        private IShowErrorService showErrorService;
+        private ISixDigitCodeValidator codeValidator;
+        private IChangePasswordService changePassword;
+        private IChangeFormService changeFormService;
         private IDeletableEntityRepository<User> user;
         private IDeletableEntityRepository<ConfirmEmail> confirmEmail;
 

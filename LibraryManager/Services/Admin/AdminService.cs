@@ -1,18 +1,14 @@
 ﻿namespace LibraryManager.Services.Admin
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
-    using LibraryManager.ViewModels;
-    using System;
-    using LibraryManager.Automapper;
-    using System.Collections.Generic;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Linq;
-
+    
     public class AdminService : IAdminService
     {
-        IDeletableEntityRepository<Book> book;
+        private IDeletableEntityRepository<Book> book;
         public AdminService(IDeletableEntityRepository<Book> book)
         {
             this.book = book;

@@ -5,6 +5,7 @@
     public interface IChangePasswordService
     {
         Task Change(string email, string passsword);
+
         string GetCurrentUserPassword(string email);
     }
 }

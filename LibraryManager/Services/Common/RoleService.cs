@@ -1,14 +1,11 @@
 ﻿namespace LibraryManager.Services.Common
 {
+    using System.Linq;
     using LibraryManager.Automapper;
-    using LibraryManager.Database.Data;
+
+    using LibraryManager.ViewModels;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
-    using LibraryManager.ViewModels;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
 
     public class RoleService : IRoleService
     {

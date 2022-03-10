@@ -1,30 +1,25 @@
 ﻿namespace LibraryManager.Forms.Client
 {
-    using LibraryManager.Database.Data;
-    using LibraryManager.Database.Models;
-    using LibraryManager.Database.Repositories;
-    using LibraryManager.Forms.Admin;
-    using LibraryManager.Services.Client;
-    using LibraryManager.Services.Common;
-    using Microsoft.EntityFrameworkCore;
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
     using System.Drawing;
     using System.IO;
     using System.Linq;
-    using System.Text;
     using System.Threading;
     using System.Windows.Forms;
+    using Microsoft.EntityFrameworkCore;
+
+    using LibraryManager.Database.Data;
+    using LibraryManager.Database.Models;
+    using LibraryManager.Database.Repositories;
+    using LibraryManager.Services.Common;
 
     public partial class Profile : Form
     {
-        Image bookImage;
-        byte[] bookImageInBytes;
-        LibraryManagerContext db;
+        private Image bookImage;
+        private byte[] bookImageInBytes;
+        private LibraryManagerContext db;
         private IDeletableEntityRepository<BorrowedBook> borrowedBook;
-        IChangeFormService changeFormService;
+        private IChangeFormService changeFormService;
 
         public Profile()
         {
@@ -67,6 +62,8 @@
             newThread.SetApartmentState(ApartmentState.STA);
             newThread.Start();
         }
+
+        //Image processing
         private void showOpenFileDialog()
         {
             var fileContent = string.Empty;

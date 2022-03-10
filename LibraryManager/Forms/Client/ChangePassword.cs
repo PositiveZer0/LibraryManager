@@ -1,23 +1,23 @@
 ﻿namespace LibraryManager.Forms.Client
 {
+    using System;
+    using System.Windows.Forms;
+
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
     using LibraryManager.Services.Common;
     using LibraryManager.Services.Login;
     using LibraryManager.Services.Login.ValidationCreateAccount;
-    using System;
-    using System.Linq;
-    using System.Windows.Forms;
 
     public partial class ChangePassword : Form
     {
-        string email;
-        Timer timer;
-        PasswordValidator passwordValidator;
-        IShowErrorService showErrorService;
-        IChangePasswordService changePasswordService;
-        IDeletableEntityRepository<User> user;
+        private string email;
+        private Timer timer;
+        private PasswordValidator passwordValidator;
+        private IShowErrorService showErrorService;
+        private IChangePasswordService changePasswordService;
+        private IDeletableEntityRepository<User> user;
 
         public ChangePassword(string email)
         {

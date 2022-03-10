@@ -14,11 +14,11 @@
 
     public partial class AddBook : Form
     {
-        IBookService bookService;
-        LibraryManagerContext db;
-        IDeletableEntityRepository<BorrowedBook> borrowedBooks;
-        Image bookImage;
-        byte[] bookImageInBytes;
+        private byte[] bookImageInBytes;
+        private Image bookImage;
+        private LibraryManagerContext db;
+        private IBookService bookService;
+        private IDeletableEntityRepository<BorrowedBook> borrowedBooks;
 
         public AddBook()
         {
@@ -58,6 +58,14 @@
             this.Close();
         }
 
+        private void addImage_btn_Click(object sender, EventArgs e)
+        {
+            Thread newThread = new Thread(new ThreadStart(showOpenFileDialog));
+            newThread.SetApartmentState(ApartmentState.STA);
+            newThread.Start();
+        }
+
+        //Image processing
         private void showOpenFileDialog()
         {
             var fileContent = string.Empty;
@@ -88,12 +96,6 @@
                     this.bookImageInBytes = arr;
                 }
             }
-        }
-        private void addImage_btn_Click(object sender, EventArgs e)
-        {
-            Thread newThread = new Thread(new ThreadStart(showOpenFileDialog));
-            newThread.SetApartmentState(ApartmentState.STA);
-            newThread.Start();
         }
 
         private static byte[] ReadFully(Stream input)

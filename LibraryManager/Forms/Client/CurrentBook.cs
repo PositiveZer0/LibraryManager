@@ -1,5 +1,12 @@
 ﻿namespace LibraryManager.Forms.Client
 {
+    using System;
+    using System.Drawing;
+    using System.IO;
+    using System.Linq;
+    using System.Windows.Forms;
+    using Microsoft.EntityFrameworkCore;
+
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
@@ -7,28 +14,16 @@
     using LibraryManager.Services.Client;
     using LibraryManager.Services.Common;
     using LibraryManager.ViewModels;
-    using Microsoft.EntityFrameworkCore;
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Drawing;
-    using System.Globalization;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Windows.Forms;
 
     public partial class CurrentBook : Form
     {
-        BookViewModel book;
-        IBookService bookService;
-        IChangeFormService changeFormService;
+        private BookViewModel book;
         private LibraryManagerContext db;
-        IDeletableEntityRepository<BorrowedBook> borrowedBooks;
-        IDeletableEntityRepository<User> user;
-        IRoleService roleService;
+        private IBookService bookService;
+        private IChangeFormService changeFormService;
+        private IRoleService roleService;
+        private IDeletableEntityRepository<BorrowedBook> borrowedBooks;
+        private IDeletableEntityRepository<User> user;
 
         public CurrentBook(BookViewModel book)
         {

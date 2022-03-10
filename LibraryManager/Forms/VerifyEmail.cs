@@ -1,11 +1,6 @@
 ﻿namespace LibraryManager.Forms
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Drawing;
-    using System.Text;
     using System.Windows.Forms;
 
     using LibraryManager.Database.Data;
@@ -13,7 +8,6 @@
     using LibraryManager.Database.Repositories;
     using LibraryManager.Services.Common;
     using LibraryManager.Services.Login;
-    using LibraryManager.Services.Login.ValidationCreateAccount;
 
     public partial class VerifyEmail : Form
     {

@@ -1,24 +1,18 @@
 ﻿namespace LibraryManager.Forms.Admin
 {
+    using System;
+    using System.Windows.Forms;
+
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
     using LibraryManager.Services.Admin;
-    using LibraryManager.ViewModels;
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Drawing;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Windows.Forms;
 
     public partial class UpdateBook : Form
     {
-        int id;
-        IDeletableEntityRepository<Book> book;
-        IAdminService adminService;
+        private int id;
+        private IDeletableEntityRepository<Book> book;
+        private IAdminService adminService;
         public UpdateBook(int id)
         {
             InitializeComponent();

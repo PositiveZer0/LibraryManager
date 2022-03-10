@@ -15,12 +15,12 @@
 
     public partial class Books : Form
     {
-        string method;
-        IBookService bookService;
-        IRoleService roleService;
-        LibraryManagerContext db;
-        IDeletableEntityRepository<BorrowedBook> borrowedBooks;
-        IDeletableEntityRepository<User> user;
+        private string method;
+        private IBookService bookService;
+        private IRoleService roleService;
+        private LibraryManagerContext db;
+        private IDeletableEntityRepository<BorrowedBook> borrowedBooks;
+        private IDeletableEntityRepository<User> user;
 
         public Books(string method = "All")
         {

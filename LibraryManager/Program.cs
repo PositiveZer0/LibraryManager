@@ -9,7 +9,6 @@ namespace LibraryManager
     using LibraryManager.Database.Data;
     using LibraryManager.Database.Models;
     using LibraryManager.Database.Repositories;
-    using LibraryManager.SendGrid;
     using LibraryManager.Services.Client;
 
     static class Program
@@ -25,6 +24,7 @@ namespace LibraryManager
             //db.Database.EnsureDeleted();
             db.Database.EnsureCreated();
 
+            //auto send emails 7 days before book deadline
             var bookService = new BookService(new LibraryManagerContext(), new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext()));
             await bookService.SendEmailBorrowedBooks();
 

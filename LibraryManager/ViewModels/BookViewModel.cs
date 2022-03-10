@@ -1,6 +1,7 @@
 ﻿namespace LibraryManager.ViewModels
 {
     using LibraryManager.Automapper;
+
     using LibraryManager.Database.Models;
 
     public class BookViewModel : IMapFrom<Book>
