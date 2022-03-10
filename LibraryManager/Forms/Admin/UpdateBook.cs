@@ -38,8 +38,17 @@
                 Description = description_textBox.Text,
                 Quantity = Convert.ToInt32(quantity_textBox.Text),
             };
+            try
+            {
+                await this.adminService.UpdateBookAsync(currentBook, this.id);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Book update failed", "Error");
+            }
 
-            await this.adminService.UpdateBookAsync(currentBook, this.id);
+            MessageBox.Show("Book updated successfully", "Book update");
+            this.Close();
         }
     }
 }
