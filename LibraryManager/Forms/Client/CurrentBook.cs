@@ -27,13 +27,17 @@
         IChangeFormService changeFormService;
         private LibraryManagerContext db;
         IDeletableEntityRepository<BorrowedBook> borrowedBooks;
+        IDeletableEntityRepository<User> user;
+        IRoleService roleService;
 
         public CurrentBook(BookViewModel book)
         {
             InitializeComponent();
             this.book = book;
             this.borrowedBooks = new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext());
+            this.user = new EfDeletableEntityRepository<User>(new LibraryManagerContext());
             this.bookService = new BookService(new LibraryManagerContext(), this.borrowedBooks);
+            this.roleService = new RoleService(this.user);
             this.changeFormService = new ChangeFormService();
             //refactor
             this.db = new LibraryManagerContext();
@@ -41,13 +45,21 @@
 
         private void CurrentBook_Load(object sender, EventArgs e)
         {
+            //Display update button for admin
+            var currentUser = this.roleService.GetCurrentUser();
+            if (currentUser.Role == "Student")
+            {
+                updateBook_btn.Visible = false;
+            }
+
+
             title_label.Text = this.book.Title;
             author_label.Text = "by " + this.book.AuthorName;
             description_textBox.Text = this.book.Description;
             genre_label.Text = this.book.Genre;
 
+
             var currentBook = this.db.Books.Include(x => x.BookImage).FirstOrDefault(x => x.Title == title_label.Text);
-            
             if (currentBook.BookImageId != null)
             {
                 Bitmap bmp;

@@ -76,7 +76,7 @@
             this.genre_label.AutoSize = true;
             this.genre_label.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.genre_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(125)))), ((int)(((byte)(185)))));
-            this.genre_label.Location = new System.Drawing.Point(145, 744);
+            this.genre_label.Location = new System.Drawing.Point(605, 288);
             this.genre_label.Name = "genre_label";
             this.genre_label.Size = new System.Drawing.Size(290, 74);
             this.genre_label.TabIndex = 10;
@@ -99,12 +99,12 @@
             // 
             // description_textBox
             // 
-            this.description_textBox.Location = new System.Drawing.Point(605, 365);
+            this.description_textBox.Location = new System.Drawing.Point(605, 386);
             this.description_textBox.Multiline = true;
             this.description_textBox.Name = "description_textBox";
             this.description_textBox.ReadOnly = true;
             this.description_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.description_textBox.Size = new System.Drawing.Size(743, 345);
+            this.description_textBox.Size = new System.Drawing.Size(743, 324);
             this.description_textBox.TabIndex = 12;
             // 
             // updateBook_btn
@@ -114,7 +114,7 @@
             this.updateBook_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBook_btn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.updateBook_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.updateBook_btn.Location = new System.Drawing.Point(166, 848);
+            this.updateBook_btn.Location = new System.Drawing.Point(176, 763);
             this.updateBook_btn.Name = "updateBook_btn";
             this.updateBook_btn.Size = new System.Drawing.Size(258, 80);
             this.updateBook_btn.TabIndex = 13;

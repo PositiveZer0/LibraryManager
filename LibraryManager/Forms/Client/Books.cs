@@ -10,20 +10,25 @@
     using LibraryManager.Database.Repositories;
     using LibraryManager.Forms.Admin;
     using LibraryManager.Services.Client;
+    using LibraryManager.Services.Common;
     using LibraryManager.ViewModels;
 
     public partial class Books : Form
     {
         string method;
         IBookService bookService;
+        IRoleService roleService;
         LibraryManagerContext db;
         IDeletableEntityRepository<BorrowedBook> borrowedBooks;
+        IDeletableEntityRepository<User> user;
 
         public Books(string method = "All")
         {
             InitializeComponent();
             this.db = new LibraryManagerContext();
             this.borrowedBooks = new EfDeletableEntityRepository<BorrowedBook>(new LibraryManagerContext());
+            this.user = new EfDeletableEntityRepository<User>(new LibraryManagerContext());
+            this.roleService = new RoleService(this.user);
             this.bookService = new BookService(this.db, this.borrowedBooks);
             this.method = method;
             StyleDatagridview();
@@ -31,6 +36,13 @@
 
         private void Books_Load(object sender, EventArgs e)
         {
+            //Display add book button if role is admin
+            var currentUser = this.roleService.GetCurrentUser();
+            if (currentUser.Role == "Student")
+            {
+                addBook_btn.Visible = false;
+            }
+
             var list = new BindingList<BookViewModel>(this.bookService.GetAllBooks());
 
             if (this.method == "Borrowed books")
@@ -85,7 +97,13 @@
             currentBook.Show(this);
         }
 
-        void StyleDatagridview()
+        private void addBook_btn_Click(object sender, EventArgs e)
+        {
+            var currentBook = new AddBook();
+            currentBook.Show(this);
+        }
+
+        private void StyleDatagridview()
         {
             books_dataGridView.BorderStyle = BorderStyle.None;
             books_dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
@@ -101,10 +119,5 @@
             books_dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(240, 240, 240);
         }
 
-        private void addBook_btn_Click(object sender, EventArgs e)
-        {
-            var currentBook = new AddBook();
-            currentBook.Show(this);
-        }
     }
 }

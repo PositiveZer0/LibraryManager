@@ -22,7 +22,5 @@
         public Task SendEmailBorrowedBooks();
 
         int GetBookIdByTitle(string title);
-
-
     }
 }
