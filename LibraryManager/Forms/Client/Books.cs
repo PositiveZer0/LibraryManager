@@ -49,6 +49,8 @@
             {
                 var borrowedBooks = new BindingList<BorrowedBookViewModel>(this.bookService.GetAllBorrowedBooks());
                 books_dataGridView.DataSource = borrowedBooks;
+                books_dataGridView.Columns["Image"].Visible = false;
+                books_dataGridView.Columns["Quantity"].Visible = false;
                 return;
             }
 
@@ -59,6 +61,7 @@
 
             books_dataGridView.DataSource = list;
             books_dataGridView.Columns["Image"].Visible = false;
+            books_dataGridView.Columns["Quantity"].Visible = false;
             this.books_dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.books_dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.books_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
