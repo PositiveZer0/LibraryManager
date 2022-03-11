@@ -47,6 +47,10 @@
                 updateBook_btn.Visible = false;
             }
 
+            if (currentUser.Role == "Admin")
+            {
+                borrow_btn.Visible = false;
+            }
 
             title_label.Text = this.book.Title;
             author_label.Text = "by " + this.book.AuthorName;
