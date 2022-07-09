@@ -1,5 +1,5 @@
 # LibraryManager
-🔨 Built with: <br/>
+<h1>🔨 Built with: </h1> <br/>
 <hr/>
 Windows Forms <br/>
 Visual Studio 2019 <br/>
@@ -9,7 +9,7 @@ SendGrid <br/>
 AutoMapper <br/>
 
 <hr/>
-<h3>📸 Application screenshots</h3>
+<h1>📸 Application screenshots</h3>
 <p>
   <img src="https://user-images.githubusercontent.com/60852918/178106582-9c4c0b7f-6761-4a64-b2e4-adb2fb81efba.png"/>
 <p/>
@@ -55,4 +55,12 @@ AutoMapper <br/>
 <p>
   <img src="https://user-images.githubusercontent.com/60852918/178106673-babb58d0-ab67-4092-9a18-7c2ef535c380.png"/>
 <p/>
+<h1>🔧 Database Diagram</h3>
+<p>
+<img src="https://user-images.githubusercontent.com/60852918/178108248-6fa3f50d-2b59-4e38-b2ff-89c80bb82d72.png"/>
+</p>
+<h2>Passwords are stored in hashed form in the database</h2>
+<p>
+<img src="https://user-images.githubusercontent.com/60852918/178108252-b861d2f3-a509-4219-a9da-f7564c6631cc.png"/>
+</p>
 
